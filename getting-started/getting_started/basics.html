@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Essential basic functionality &#8212; pandas 1.0.0rc0+118.g9534c755e documentation</title>
+    <title>Essential basic functionality &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -113,6 +113,54 @@
       
       
       
+        
+          
+              <li class="">
+                  <a href="install.html">Installation</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="overview.html">Package overview</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="10min.html">10 minutes to pandas</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="intro_tutorials/index.html">Getting started tutorials</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">Essential basic functionality</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="dsintro.html">Intro to data structures</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="comparison/index.html">Comparison with other tools</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="tutorials.html">Tutorials</a>
+              </li>
+          
         
       
       
@@ -1390,11 +1438,11 @@ categorical columns:</p>
 arguments. The special value <code class="docutils literal notranslate"><span class="pre">all</span></code> can also be used:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [104]: </span><span class="n">frame</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>
 <span class="gh">Out[104]: </span><span class="go"></span>
-<span class="go">         a</span>
-<span class="go">count    4</span>
-<span class="go">unique   2</span>
-<span class="go">top     No</span>
-<span class="go">freq     2</span>
+<span class="go">          a</span>
+<span class="go">count     4</span>
+<span class="go">unique    2</span>
+<span class="go">top     Yes</span>
+<span class="go">freq      2</span>
 
 <span class="gp">In [105]: </span><span class="n">frame</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>
 <span class="gh">Out[105]: </span><span class="go"></span>
@@ -1413,7 +1461,7 @@ arguments. The special value <code class="docutils literal notranslate"><span cl
 <span class="go">          a         b</span>
 <span class="go">count     4  4.000000</span>
 <span class="go">unique    2       NaN</span>
-<span class="go">top      No       NaN</span>
+<span class="go">top     Yes       NaN</span>
 <span class="go">freq      2       NaN</span>
 <span class="go">mean    NaN  1.500000</span>
 <span class="go">std     NaN  1.290994</span>
@@ -1698,7 +1746,7 @@ In this case, provide <code class="docutils literal notranslate"><span class="pr
 <span class="go">Model:                            OLS   Adj. R-squared:                  0.665</span>
 <span class="go">Method:                 Least Squares   F-statistic:                     34.28</span>
 <span class="go">Date:                 Mo, 20 Jan 2020   Prob (F-statistic):           3.48e-15</span>
-<span class="go">Time:                        17:28:08   Log-Likelihood:                -205.92</span>
+<span class="go">Time:                        20:08:57   Log-Likelihood:                -205.92</span>
 <span class="go">No. Observations:                  68   AIC:                             421.8</span>
 <span class="go">Df Residuals:                      63   BIC:                             432.9</span>
 <span class="go">Df Model:                           4                                         </span>
@@ -3791,13 +3839,13 @@ dtype of the column will be chosen to accommodate all of the data types
 <code class="docutils literal notranslate"><span class="pre">DataFrame.dtypes.value_counts()</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [339]: </span><span class="n">dft</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="gh">Out[339]: </span><span class="go"></span>
+<span class="go">float64           1</span>
+<span class="go">datetime64[ns]    1</span>
+<span class="go">bool              1</span>
+<span class="go">object            1</span>
 <span class="go">float32           1</span>
 <span class="go">int64             1</span>
 <span class="go">int8              1</span>
-<span class="go">bool              1</span>
-<span class="go">object            1</span>
-<span class="go">float64           1</span>
-<span class="go">datetime64[ns]    1</span>
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>

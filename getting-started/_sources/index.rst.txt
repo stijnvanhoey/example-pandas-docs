@@ -26,6 +26,7 @@ See the :ref:`overview` for more detail about what's in the library.
 .. toctree::
     :maxdepth: 3
     :hidden:
+    :titlesonly:
 
 
     What's New in 1.1.0 <whatsnew/v1.1.0>
