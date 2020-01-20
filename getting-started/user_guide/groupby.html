@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Group By: split-apply-combine &#8212; pandas 1.0.0rc0+116.g1e777eb25.dirty documentation</title>
+    <title>Group By: split-apply-combine &#8212; pandas 1.0.0rc0+118.g9534c755e documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -912,7 +912,7 @@ getting a column from a DataFrame, you can do:</p>
 </div>
 <p>This is mainly syntactic sugar for the alternative and much more verbose:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [56]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
-<span class="gh">Out[56]: </span><span class="go">&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f2094e1f990&gt;</span>
+<span class="gh">Out[56]: </span><span class="go">&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7fe7324dd290&gt;</span>
 </pre></div>
 </div>
 <p>Additionally this method avoids recomputing the internal grouping information
@@ -1470,7 +1470,7 @@ each group, which we can easily check:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [101]: </span><span class="n">compare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Original&#39;</span><span class="p">:</span> <span class="n">ts</span><span class="p">,</span> <span class="s1">&#39;Transformed&#39;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>
 
 <span class="gp">In [102]: </span><span class="n">compare</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[102]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f209688bfd0&gt;</span>
+<span class="gh">Out[102]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe77bee3f10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/groupby_transform_plot.png" src="../_images/groupby_transform_plot.png" />

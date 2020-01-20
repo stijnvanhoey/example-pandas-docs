@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>IO tools (text, CSV, HDF5, …) &#8212; pandas 1.0.0rc0+116.g1e777eb25.dirty documentation</title>
+    <title>IO tools (text, CSV, HDF5, …) &#8212; pandas 1.0.0rc0+118.g9534c755e documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -2937,7 +2937,7 @@ value will be an iterable object of type <code class="docutils literal notransla
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [190]: </span><span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;tmp.sv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 
 <span class="gp">In [191]: </span><span class="n">reader</span>
-<span class="gh">Out[191]: </span><span class="go">&lt;pandas.io.parsers.TextFileReader at 0x7f20908b9d90&gt;</span>
+<span class="gh">Out[191]: </span><span class="go">&lt;pandas.io.parsers.TextFileReader at 0x7fe72df72c90&gt;</span>
 
 <span class="gp">In [192]: </span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
@@ -3531,11 +3531,11 @@ data:</p>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [251]: </span><span class="o">%</span><span class="k">timeit</span> pd.read_json(jsonfloats)
-<span class="go">13.8 ms +- 801 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">14.1 ms +- 715 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [252]: </span><span class="o">%</span><span class="k">timeit</span> pd.read_json(jsonfloats, numpy=True)
-<span class="go">9.53 ms +- 323 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">9.65 ms +- 234 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <p>The speedup is less noticeable for smaller datasets:</p>
@@ -3543,11 +3543,11 @@ data:</p>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [254]: </span><span class="o">%</span><span class="k">timeit</span> pd.read_json(jsonfloats)
-<span class="go">8.76 ms +- 663 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">9.19 ms +- 256 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [255]: </span><span class="o">%</span><span class="k">timeit</span> pd.read_json(jsonfloats, numpy=True)
-<span class="go">6.54 ms +- 352 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">7.36 ms +- 213 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <div class="alert alert-warning">
@@ -3655,7 +3655,7 @@ using Hadoop or Spark.</p>
 <span class="gp">In [266]: </span><span class="n">reader</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">jsonl</span><span class="p">),</span> <span class="n">lines</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="gp">In [267]: </span><span class="n">reader</span>
-<span class="gh">Out[267]: </span><span class="go">&lt;pandas.io.json._json.JsonReader at 0x7f20907ee3d0&gt;</span>
+<span class="gh">Out[267]: </span><span class="go">&lt;pandas.io.json._json.JsonReader at 0x7fe72de7fe50&gt;</span>
 
 <span class="gp">In [268]: </span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
 <span class="gp">   .....: </span>    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
@@ -5552,11 +5552,11 @@ defaults to <cite>nan</cite>.</p>
 <span class="gp">In [392]: </span><span class="n">df_mixed1</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 <span class="gh">Out[392]: </span><span class="go"></span>
 <span class="go">float64           2</span>
-<span class="go">object            1</span>
-<span class="go">int64             1</span>
 <span class="go">bool              1</span>
-<span class="go">float32           1</span>
+<span class="go">object            1</span>
 <span class="go">datetime64[ns]    1</span>
+<span class="go">int64             1</span>
+<span class="go">float32           1</span>
 <span class="go">dtype: int64</span>
 
 <span class="go"># we have provided a minimum string column size</span>
