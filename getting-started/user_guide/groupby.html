@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Group By: split-apply-combine &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Group By: split-apply-combine &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -912,7 +912,7 @@ getting a column from a DataFrame, you can do:</p>
 </div>
 <p>This is mainly syntactic sugar for the alternative and much more verbose:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [56]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">])</span>
-<span class="gh">Out[56]: </span><span class="go">&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f63a5ddb1d0&gt;</span>
+<span class="gh">Out[56]: </span><span class="go">&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x7f03bc485410&gt;</span>
 </pre></div>
 </div>
 <p>Additionally this method avoids recomputing the internal grouping information
@@ -1077,14 +1077,14 @@ index are the group names and whose values are the sizes of each group.</p>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [71]: </span><span class="n">grouped</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 <span class="gh">Out[71]: </span><span class="go"></span>
-<span class="go">      C                                          ...         D                                        </span>
-<span class="go">  count      mean       std       min       25%  ...       min       25%       50%       75%       max</span>
-<span class="go">0   1.0  0.254161       NaN  0.254161  0.254161  ...  1.511763  1.511763  1.511763  1.511763  1.511763</span>
-<span class="go">1   1.0  0.215897       NaN  0.215897  0.215897  ... -0.990582 -0.990582 -0.990582 -0.990582 -0.990582</span>
-<span class="go">2   1.0 -0.077118       NaN -0.077118 -0.077118  ...  1.211526  1.211526  1.211526  1.211526  1.211526</span>
-<span class="go">3   2.0 -0.491888  0.117887 -0.575247 -0.533567  ...  0.268520  0.537905  0.807291  1.076676  1.346061</span>
-<span class="go">4   1.0 -0.862495       NaN -0.862495 -0.862495  ...  0.024580  0.024580  0.024580  0.024580  0.024580</span>
-<span class="go">5   2.0  0.024925  1.652692 -1.143704 -0.559389  ... -0.441652  0.075531  0.592714  1.109898  1.627081</span>
+<span class="go">      C                                                              ...         D                                                            </span>
+<span class="go">  count      mean       std       min       25%       50%       75%  ...      mean       std       min       25%       50%       75%       max</span>
+<span class="go">0   1.0  0.254161       NaN  0.254161  0.254161  0.254161  0.254161  ...  1.511763       NaN  1.511763  1.511763  1.511763  1.511763  1.511763</span>
+<span class="go">1   1.0  0.215897       NaN  0.215897  0.215897  0.215897  0.215897  ... -0.990582       NaN -0.990582 -0.990582 -0.990582 -0.990582 -0.990582</span>
+<span class="go">2   1.0 -0.077118       NaN -0.077118 -0.077118 -0.077118 -0.077118  ...  1.211526       NaN  1.211526  1.211526  1.211526  1.211526  1.211526</span>
+<span class="go">3   2.0 -0.491888  0.117887 -0.575247 -0.533567 -0.491888 -0.450209  ...  0.807291  0.761937  0.268520  0.537905  0.807291  1.076676  1.346061</span>
+<span class="go">4   1.0 -0.862495       NaN -0.862495 -0.862495 -0.862495 -0.862495  ...  0.024580       NaN  0.024580  0.024580  0.024580  0.024580  0.024580</span>
+<span class="go">5   2.0  0.024925  1.652692 -1.143704 -0.559389  0.024925  0.609240  ...  0.592714  1.462816 -0.441652  0.075531  0.592714  1.109898  1.627081</span>
 
 <span class="go">[6 rows x 16 columns]</span>
 </pre></div>
@@ -1470,7 +1470,7 @@ each group, which we can easily check:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [101]: </span><span class="n">compare</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Original&#39;</span><span class="p">:</span> <span class="n">ts</span><span class="p">,</span> <span class="s1">&#39;Transformed&#39;</span><span class="p">:</span> <span class="n">transformed</span><span class="p">})</span>
 
 <span class="gp">In [102]: </span><span class="n">compare</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[102]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a5d7ce10&gt;</span>
+<span class="gh">Out[102]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03be18c990&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/groupby_transform_plot.png" src="../_images/groupby_transform_plot.png" />

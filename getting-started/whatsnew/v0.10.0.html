@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>v0.10.0 (December 17, 2012) &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>v0.10.0 (December 17, 2012) &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -546,13 +546,13 @@ talking about:</p>
 <span class="go"># deprecated now</span>
 <span class="gp">In [4]: </span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gh">Out[4]: </span><span class="go"></span>
-<span class="go">            2000-01-01 00:00:00  2000-01-02 00:00:00  2000-01-03 00:00:00  ...   1   2   3</span>
-<span class="go">2000-01-01                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-02                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-03                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-04                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-05                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-06                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
+<span class="go">            2000-01-01 00:00:00  2000-01-02 00:00:00  2000-01-03 00:00:00  2000-01-04 00:00:00  ...   0   1   2   3</span>
+<span class="go">2000-01-01                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
+<span class="go">2000-01-02                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
+<span class="go">2000-01-03                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
+<span class="go">2000-01-04                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
+<span class="go">2000-01-05                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
+<span class="go">2000-01-06                  NaN                  NaN                  NaN                  NaN  ... NaN NaN NaN NaN</span>
 
 <span class="go">[6 rows x 10 columns]</span>
 
@@ -843,12 +843,12 @@ representation across multiple rows by default:</p>
 
 <span class="gp">In [25]: </span><span class="n">wide_frame</span>
 <span class="gh">Out[25]: </span><span class="go"></span>
-<span class="go">         0         1         2         3         4   ...        11        12        13        14        15</span>
-<span class="go">0 -0.548702  1.467327 -1.015962 -0.483075  1.637550  ...  0.266046 -0.709661  1.669052  1.037882 -1.705775</span>
-<span class="go">1 -0.919854 -0.042379  1.247642 -0.009920  0.290213  ... -0.945867 -0.932132  1.956030  0.017587 -0.016692</span>
-<span class="go">2 -0.575247  0.254161 -1.143704  0.215897  1.193555  ... -0.990582 -0.441652  1.211526  0.268520  0.024580</span>
-<span class="go">3 -1.577585  0.396823 -0.105381 -0.532532  1.453749  ... -0.693205 -0.339355  0.593616  0.884345  1.591431</span>
-<span class="go">4  0.141809  0.220390  0.435589  0.192451 -0.096701  ... -0.595447  1.395433 -0.392670  0.007207  1.928123</span>
+<span class="go">         0         1         2         3         4         5         6   ...        9         10        11        12        13        14        15</span>
+<span class="go">0 -0.548702  1.467327 -1.015962 -0.483075  1.637550 -1.217659 -0.291519  ...  0.991460 -0.919069  0.266046 -0.709661  1.669052  1.037882 -1.705775</span>
+<span class="go">1 -0.919854 -0.042379  1.247642 -0.009920  0.290213  0.495767  0.362949  ... -0.089329  0.337863 -0.945867 -0.932132  1.956030  0.017587 -0.016692</span>
+<span class="go">2 -0.575247  0.254161 -1.143704  0.215897  1.193555 -0.077118 -0.408530  ...  1.511763  1.627081 -0.990582 -0.441652  1.211526  0.268520  0.024580</span>
+<span class="go">3 -1.577585  0.396823 -0.105381 -0.532532  1.453749  1.208843 -0.080952  ... -0.589346  0.339969 -0.693205 -0.339355  0.593616  0.884345  1.591431</span>
+<span class="go">4  0.141809  0.220390  0.435589  0.192451 -0.096701  0.803351  1.715071  ... -1.814470  1.018601 -0.595447  1.395433 -0.392670  0.007207  1.928123</span>
 
 <span class="go">[5 rows x 16 columns]</span>
 </pre></div>

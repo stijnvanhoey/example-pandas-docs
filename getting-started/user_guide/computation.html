@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Computational tools &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Computational tools &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -763,10 +763,10 @@ result is NA)</p></li>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [46]: </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="gh">Out[46]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63aa211150&gt;</span>
+<span class="gh">Out[46]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c07ebc50&gt;</span>
 
 <span class="gp">In [47]: </span><span class="n">r</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="gh">Out[47]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63aa211150&gt;</span>
+<span class="gh">Out[47]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c07ebc50&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/rolling_mean_ex.png" src="../_images/rolling_mean_ex.png" />
@@ -781,10 +781,10 @@ sugar for applying the moving window operator to all of the DataFrame’s column
 
 <span class="gp">In [50]: </span><span class="n">df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gh">Out[50]: </span><span class="go"></span>
-<span class="go">array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a81c32d0&gt;,</span>
-<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a8174d10&gt;,</span>
-<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a8194e50&gt;,</span>
-<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a8137f50&gt;],</span>
+<span class="go">array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03be388b50&gt;,</span>
+<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03be350c10&gt;,</span>
+<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03be395190&gt;,</span>
+<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03be2bbe50&gt;],</span>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
@@ -859,7 +859,7 @@ compute the mean absolute deviation on a rolling basis:</p>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [52]: </span><span class="n">s</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">mad</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="gh">Out[52]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7f04e10&gt;</span>
+<span class="gh">Out[52]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03be2d8710&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/rolling_apply_ex.png" src="../_images/rolling_apply_ex.png" />
@@ -1426,7 +1426,7 @@ calculating covariance and correlation matrices.</p>
 <p>You can efficiently retrieve the time series of correlations between two
 columns by reshaping and indexing:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [90]: </span><span class="n">correls</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="mi">1</span><span class="p">)[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[90]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7cfa790&gt;</span>
+<span class="gh">Out[90]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03bdf96610&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/rolling_corr_pairwise_ex.png" src="../_images/rolling_corr_pairwise_ex.png" />
@@ -1787,10 +1787,10 @@ its rolling window counterpart as the increasing window size decreases the
 relative impact of an individual data point. As an example, here is the
 <code class="xref py py-meth docutils literal notranslate"><span class="pre">mean()</span></code> output for the previous time series dataset:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [111]: </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="gh">Out[111]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7cc9cd0&gt;</span>
+<span class="gh">Out[111]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03bdd6f910&gt;</span>
 
 <span class="gp">In [112]: </span><span class="n">s</span><span class="o">.</span><span class="n">expanding</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="gh">Out[112]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7cc9cd0&gt;</span>
+<span class="gh">Out[112]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03bdd6f910&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/expanding_mean_frame.png" src="../_images/expanding_mean_frame.png" />
@@ -1903,10 +1903,10 @@ one half.</p></li>
 </ul>
 <p>Here is an example for a univariate time series:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [113]: </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k--&#39;</span><span class="p">)</span>
-<span class="gh">Out[113]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7b344d0&gt;</span>
+<span class="gh">Out[113]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03bf11e750&gt;</span>
 
 <span class="gp">In [114]: </span><span class="n">s</span><span class="o">.</span><span class="n">ewm</span><span class="p">(</span><span class="n">span</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="gh">Out[114]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63a7b344d0&gt;</span>
+<span class="gh">Out[114]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03bf11e750&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/ewma_ex.png" src="../_images/ewma_ex.png" />

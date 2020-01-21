@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Intro to data structures &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Intro to data structures &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -990,7 +990,7 @@ greater than 5, calculate the ratio, and plot:</p>
 <span class="gp">   ....: </span>             <span class="n">PetalRatio</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">PetalWidth</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">PetalLength</span><span class="p">)</span>
 <span class="gp">   ....: </span>     <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;SepalRatio&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;PetalRatio&#39;</span><span class="p">))</span>
 <span class="gp">   ....: </span>
-<span class="gh">Out[78]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63e67ffc90&gt;</span>
+<span class="gh">Out[78]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03ff3af3d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/basics_assign.png" src="../_images/basics_assign.png" />
@@ -1156,15 +1156,15 @@ contains dates, the broadcasting will be column-wise:</p>
 
 <span class="gp">In [91]: </span><span class="n">df</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
 <span class="gh">Out[91]: </span><span class="go"></span>
-<span class="go">            2000-01-01 00:00:00  2000-01-02 00:00:00  2000-01-03 00:00:00  ...   A   B   C</span>
-<span class="go">2000-01-01                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-02                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-03                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-04                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-05                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-06                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-07                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
-<span class="go">2000-01-08                  NaN                  NaN                  NaN  ... NaN NaN NaN</span>
+<span class="go">            2000-01-01 00:00:00  2000-01-02 00:00:00  2000-01-03 00:00:00  2000-01-04 00:00:00  ...  2000-01-08 00:00:00   A   B   C</span>
+<span class="go">2000-01-01                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-02                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-03                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-04                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-05                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-06                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-07                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
+<span class="go">2000-01-08                  NaN                  NaN                  NaN                  NaN  ...                  NaN NaN NaN NaN</span>
 
 <span class="go">[8 rows x 11 columns]</span>
 </pre></div>
@@ -1395,12 +1395,12 @@ R package):</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [117]: </span><span class="n">baseball</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/baseball.csv&#39;</span><span class="p">)</span>
 
 <span class="gp">In [118]: </span><span class="nb">print</span><span class="p">(</span><span class="n">baseball</span><span class="p">)</span>
-<span class="go">       id     player  year  stint team  lg   g   ab   r  ...   sb   cs  bb    so  ibb  hbp   sh   sf  gidp</span>
-<span class="go">0   88641  womacto01  2006      2  CHN  NL  19   50   6  ...  1.0  1.0   4   4.0  0.0  0.0  3.0  0.0   0.0</span>
-<span class="go">1   88643  schilcu01  2006      1  BOS  AL  31    2   0  ...  0.0  0.0   0   1.0  0.0  0.0  0.0  0.0   0.0</span>
-<span class="go">..    ...        ...   ...    ...  ...  ..  ..  ...  ..  ...  ...  ...  ..   ...  ...  ...  ...  ...   ...</span>
-<span class="go">98  89533   aloumo01  2007      1  NYN  NL  87  328  51  ...  3.0  0.0  27  30.0  5.0  2.0  0.0  3.0  13.0</span>
-<span class="go">99  89534  alomasa02  2007      1  NYN  NL   8   22   1  ...  0.0  0.0   0   3.0  0.0  0.0  0.0  0.0   0.0</span>
+<span class="go">       id     player  year  stint team  lg   g   ab   r    h  X2b  X3b  hr   rbi   sb   cs  bb    so  ibb  hbp   sh   sf  gidp</span>
+<span class="go">0   88641  womacto01  2006      2  CHN  NL  19   50   6   14    1    0   1   2.0  1.0  1.0   4   4.0  0.0  0.0  3.0  0.0   0.0</span>
+<span class="go">1   88643  schilcu01  2006      1  BOS  AL  31    2   0    1    0    0   0   0.0  0.0  0.0   0   1.0  0.0  0.0  0.0  0.0   0.0</span>
+<span class="go">..    ...        ...   ...    ...  ...  ..  ..  ...  ..  ...  ...  ...  ..   ...  ...  ...  ..   ...  ...  ...  ...  ...   ...</span>
+<span class="go">98  89533   aloumo01  2007      1  NYN  NL  87  328  51  112   19    1  13  49.0  3.0  0.0  27  30.0  5.0  2.0  0.0  3.0  13.0</span>
+<span class="go">99  89534  alomasa02  2007      1  NYN  NL   8   22   1    3    1    0   0   0.0  0.0  0.0   0   3.0  0.0  0.0  0.0  0.0   0.0</span>
 
 <span class="go">[100 rows x 23 columns]</span>
 
@@ -1467,12 +1467,10 @@ DataFrame in tabular form, though it won’t always fit the console width:</p>
 default:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [121]: </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="gh">Out[121]: </span><span class="go"></span>
-<span class="go">         0         1         2         3         4   ...        7         8         9         10        11</span>
-<span class="go">0 -0.345352  1.314232  0.690579  0.995761  2.396780  ... -0.317441 -1.236269  0.896171 -0.487602 -0.082240</span>
-<span class="go">1 -2.182937  0.380396  0.084844  0.432390  1.519970  ...  0.274230  0.132885 -0.023688  2.410179  1.450520</span>
-<span class="go">2  0.206053 -0.251905 -2.213588  1.063327  1.266143  ...  0.408204 -1.048089 -0.025747 -0.988387  0.094055</span>
-
-<span class="go">[3 rows x 12 columns]</span>
+<span class="go">          0         1         2         3         4         5         6         7         8         9        10        11</span>
+<span class="go">0 -0.345352  1.314232  0.690579  0.995761  2.396780  0.014871  3.357427 -0.317441 -1.236269  0.896171 -0.487602 -0.082240</span>
+<span class="go">1 -2.182937  0.380396  0.084844  0.432390  1.519970 -0.493662  0.600178  0.274230  0.132885 -0.023688  2.410179  1.450520</span>
+<span class="go">2  0.206053 -0.251905 -2.213588  1.063327  1.266143  0.299368 -0.863838  0.408204 -1.048089 -0.025747 -0.988387  0.094055</span>
 </pre></div>
 </div>
 <p>You can change how much to print on a single row by setting the <code class="docutils literal notranslate"><span class="pre">display.width</span></code>
@@ -1481,12 +1479,10 @@ option:</p>
 
 <span class="gp">In [123]: </span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="gh">Out[123]: </span><span class="go"></span>
-<span class="go">         0         1         2         3         4   ...        7         8         9         10        11</span>
-<span class="go">0  1.262731  1.289997  0.082423 -0.055758  0.536580  ... -0.034571 -2.484478 -0.281461  0.030711  0.109121</span>
-<span class="go">1  1.126203 -0.977349  1.474071 -0.064034 -1.282782  ...  0.441153  2.353925  0.583787  0.221471 -0.744471</span>
-<span class="go">2  0.758527  1.729689 -0.964980 -0.845696 -1.340896  ...  1.682706 -1.717693  0.888782  0.228440  0.901805</span>
-
-<span class="go">[3 rows x 12 columns]</span>
+<span class="go">          0         1         2         3         4         5         6         7         8         9        10        11</span>
+<span class="go">0  1.262731  1.289997  0.082423 -0.055758  0.536580 -0.489682  0.369374 -0.034571 -2.484478 -0.281461  0.030711  0.109121</span>
+<span class="go">1  1.126203 -0.977349  1.474071 -0.064034 -1.282782  0.781836 -1.071357  0.441153  2.353925  0.583787  0.221471 -0.744471</span>
+<span class="go">2  0.758527  1.729689 -0.964980 -0.845696 -1.340896  1.846883 -1.328865  1.682706 -1.717693  0.888782  0.228440  0.901805</span>
 </pre></div>
 </div>
 <p>You can adjust the max width of the individual columns by setting <code class="docutils literal notranslate"><span class="pre">display.max_colwidth</span></code></p>

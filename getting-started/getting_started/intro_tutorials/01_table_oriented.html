@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>What kind of data does Pandas handle? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>What kind of data does pandas handle? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="active">
-                          <a href="">What kind of data does Pandas handle?</a>
+                          <a href="">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -250,7 +250,7 @@
               <div>
                 
   <div class="section" id="what-kind-of-data-does-pandas-handle">
-<span id="min-tut-01-tableoriented"></span><h1>What kind of data does Pandas handle?<a class="headerlink" href="#what-kind-of-data-does-pandas-handle" title="Permalink to this headline">¶</a></h1>
+<span id="min-tut-01-tableoriented"></span><h1>What kind of data does pandas handle?<a class="headerlink" href="#what-kind-of-data-does-pandas-handle" title="Permalink to this headline">¶</a></h1>
 <ul class="task-bullet">
     <li><p>I want to start using pandas</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -272,7 +272,7 @@ documentation.</p>
 <span class="gp">   ...: </span>             <span class="s2">&quot;Bonnell, Miss. Elizabeth&quot;</span><span class="p">],</span>
 <span class="gp">   ...: </span>    <span class="s2">&quot;Age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">22</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">58</span><span class="p">],</span>
 <span class="gp">   ...: </span>    <span class="s2">&quot;Sex&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;male&quot;</span><span class="p">,</span> <span class="s2">&quot;female&quot;</span><span class="p">]}</span>
-<span class="gp">   ...: </span>    <span class="p">)</span>
+<span class="gp">   ...: </span><span class="p">)</span>
 <span class="gp">   ...: </span>
 
 <span class="gp">In [3]: </span><span class="n">df</span>
@@ -286,7 +286,7 @@ documentation.</p>
 <p>To manually store data in a table, create a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. When using a Python dictionary of lists, the dictionary keys will be used as column headers and
 the values in each list as rows of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
     </li>
-</ul><p>A <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is a 2-dimensional data structure that can store data of
+</ul><p>A <a class="reference internal" href="../../reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a> is a 2-dimensional data structure that can store data of
 different types (including characters, integers, floating point values,
 categorical data and more) in columns. It is similar to a spreadsheet, a
 SQL table or the <code class="docutils literal notranslate"><span class="pre">data.frame</span></code> in R.</p>
@@ -314,8 +314,8 @@ very similar:</p>
 <span class="go">Name: Age, dtype: int64</span>
 </pre></div>
 </div>
-<p>When selecting a single column of a pandas <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, the result is
-a pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code>. To select the column, use the column label in
+<p>When selecting a single column of a pandas <a class="reference internal" href="../../reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></a>, the result is
+a pandas <a class="reference internal" href="../../reference/api/pandas.Series.html#pandas.Series" title="pandas.Series"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a>. To select the column, use the column label in
 between square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
     </li>
 </ul><div class="alert alert-info">
@@ -326,7 +326,7 @@ single column is very similar to selection of dictionary values based on
 the key.</p>
 </div>
 <p>You can create a <code class="docutils literal notranslate"><span class="pre">Series</span></code> from scratch as well:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">ages</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">58</span><span class="p">],</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">ages</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">58</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
 
 <span class="gp">In [6]: </span><span class="n">ages</span>
 <span class="gh">Out[6]: </span><span class="go"></span>
@@ -356,7 +356,7 @@ applying <code class="docutils literal notranslate"><span class="pre">max()</spa
 </div>
     </li>
 </ul><p>As illustrated by the <code class="docutils literal notranslate"><span class="pre">max()</span></code> method, you can <em>do</em> things with a
-<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Pandas provides a lot of functionalities,
+<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>. pandas provides a lot of functionalities,
 each of them a <em>method</em> you can apply to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>.
 As methods are functions, do not forget to use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>.</p>
 <ul class="task-bullet">
@@ -374,15 +374,15 @@ As methods are functions, do not forget to use parentheses <code class="docutils
 <span class="go">max    58.000000</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">describe</span></code> method provides quick overview of the numerical data in
+<p>The <a class="reference internal" href="../../reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe" title="pandas.DataFrame.describe"><code class="xref py py-func docutils literal notranslate"><span class="pre">describe()</span></code></a> method provides a quick overview of the numerical data in
 a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. As the <code class="docutils literal notranslate"><span class="pre">Name</span></code> and <code class="docutils literal notranslate"><span class="pre">Sex</span></code> columns are textual data,
-these are by default not taken into account by the <code class="docutils literal notranslate"><span class="pre">describe</span></code> method.</p>
+these are by default not taken into account by the <a class="reference internal" href="../../reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe" title="pandas.DataFrame.describe"><code class="xref py py-func docutils literal notranslate"><span class="pre">describe()</span></code></a> method.</p>
     </li>
 </ul><p>Many pandas operations return a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or a <code class="docutils literal notranslate"><span class="pre">Series</span></code>. The
-<code class="docutils literal notranslate"><span class="pre">describe</span></code> method is an example of a pandas operation returning a
+<a class="reference internal" href="../../reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe" title="pandas.DataFrame.describe"><code class="xref py py-func docutils literal notranslate"><span class="pre">describe()</span></code></a> method is an example of a pandas operation returning a
 pandas <code class="docutils literal notranslate"><span class="pre">Series</span></code>.</p>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Check more options on <code class="docutils literal notranslate"><span class="pre">describe</span></code> in the user guide at <a class="reference internal" href="../basics.html#basics-describe"><span class="std std-ref">Summarizing data: describe</span></a></p>
+    <span class="badge badge-info">To user guide</span><p>Check more options on <code class="docutils literal notranslate"><span class="pre">describe</span></code> in the user guide section about <a class="reference internal" href="../basics.html#basics-describe"><span class="std std-ref">aggregations with describe</span></a></p>
 </div><div class="alert alert-info">
 <p class="admonition-title">Note</p>
 <p>This is just a starting point. Similar to spreadsheet
@@ -399,7 +399,7 @@ reading the next tutorials to get started!</p>
 <li><p>You can do things by applying a method to a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code></p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>A more extended introduction to <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> is provided in <a class="reference internal" href="../dsintro.html#dsintro"><span class="std std-ref">Intro to data structures</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A more extended explanation to <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> is provided in the <a class="reference internal" href="../dsintro.html#dsintro"><span class="std std-ref">introduction to data structures</span></a>.</p>
 </div></div>
 </div>
 

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Reshaping and pivot tables &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Reshaping and pivot tables &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -364,7 +364,7 @@
   <div class="section" id="reshaping-and-pivot-tables">
 <span id="reshaping"></span><h1>Reshaping and pivot tables<a class="headerlink" href="#reshaping-and-pivot-tables" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="reshaping-by-pivoting-dataframe-objects">
-<h2>Reshaping by pivoting DataFrame objects<a class="headerlink" href="#reshaping-by-pivoting-dataframe-objects" title="Permalink to this headline">¶</a></h2>
+<span id="reshaping-reshaping"></span><h2>Reshaping by pivoting DataFrame objects<a class="headerlink" href="#reshaping-by-pivoting-dataframe-objects" title="Permalink to this headline">¶</a></h2>
 <img alt="../_images/reshaping_pivot.png" src="../_images/reshaping_pivot.png" />
 <p>Data is often stored in so-called “stacked” or “record” format:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="n">df</span>
@@ -998,15 +998,13 @@ Keys to group by on the pivot table column. If an array is passed, it is being u
 <span class="gp">   ....: </span>               <span class="n">aggfunc</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
 <span class="gp">   ....: </span>
 <span class="gh">Out[59]: </span><span class="go"></span>
-<span class="go">          D                                          ...         E                                        </span>
-<span class="go">A       one               three                 two  ...       one     three                 two          </span>
-<span class="go">C       bar       foo       bar       foo       bar  ...       foo       bar       foo       bar       foo</span>
-<span class="go">B                                                    ...                                                  </span>
-<span class="go">A  2.241830 -1.028115 -2.363137       NaN       NaN  ... -0.043211  1.922577       NaN       NaN  0.128491</span>
-<span class="go">B -0.676843  0.005518       NaN  0.867024  0.316495  ... -1.103384       NaN -2.128743 -0.194294       NaN</span>
-<span class="go">C -1.077692  1.399070  1.177566       NaN       NaN  ...  1.495717 -0.263660       NaN       NaN  0.872482</span>
-
-<span class="go">[3 rows x 12 columns]</span>
+<span class="go">          D                                                           E                                                  </span>
+<span class="go">A       one               three                 two                 one               three                 two          </span>
+<span class="go">C       bar       foo       bar       foo       bar       foo       bar       foo       bar       foo       bar       foo</span>
+<span class="go">B                                                                                                                        </span>
+<span class="go">A  2.241830 -1.028115 -2.363137       NaN       NaN  2.001971  2.786113 -0.043211  1.922577       NaN       NaN  0.128491</span>
+<span class="go">B -0.676843  0.005518       NaN  0.867024  0.316495       NaN  1.368280 -1.103384       NaN -2.128743 -0.194294       NaN</span>
+<span class="go">C -1.077692  1.399070  1.177566       NaN       NaN  0.352360 -1.976883  1.495717 -0.263660       NaN       NaN  0.872482</span>
 </pre></div>
 </div>
 <p>The result object is a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> having potentially hierarchical indexes on the

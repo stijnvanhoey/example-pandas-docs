@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Visualization &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Visualization &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -447,7 +447,7 @@ some advanced strategies.</p>
 <span class="gp">In [4]: </span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 
 <span class="gp">In [5]: </span><span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[5]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b3948c10&gt;</span>
+<span class="gh">Out[5]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0376e29450&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_plot_basic.png" src="../_images/series_plot_basic.png" />
@@ -473,7 +473,7 @@ to try to format the x-axis nicely as per above.</p>
 <span class="gp">In [11]: </span><span class="n">df3</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))))</span>
 
 <span class="gp">In [12]: </span><span class="n">df3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
-<span class="gh">Out[12]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b3711110&gt;</span>
+<span class="gh">Out[12]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0376e628d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/df_plot_xy.png" src="../_images/df_plot_xy.png" />
@@ -535,7 +535,7 @@ or <a class="reference internal" href="#visualization-table"><span class="std st
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [17]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="gp">In [18]: </span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
-<span class="gh">Out[18]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b35f3c90&gt;</span>
+<span class="gh">Out[18]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03775d3990&gt;</span>
 
 <span class="gp">In [19]: </span><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">);</span>
 </pre></div>
@@ -570,7 +570,7 @@ bar plot:</p>
 <span class="gp">In [25]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="gp">In [26]: </span><span class="n">df4</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="gh">Out[26]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b33cfb10&gt;</span>
+<span class="gh">Out[26]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03769dd590&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hist_new.png" src="../_images/hist_new.png" />
@@ -579,7 +579,7 @@ using the <code class="docutils literal notranslate"><span class="pre">bins</spa
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="gp">In [28]: </span><span class="n">df4</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">stacked</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="gh">Out[28]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b333c810&gt;</span>
+<span class="gh">Out[28]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f037706a7d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hist_new_stacked.png" src="../_images/hist_new_stacked.png" />
@@ -589,7 +589,7 @@ horizontal and cumulative histograms can be drawn by
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="gp">In [30]: </span><span class="n">df4</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">cumulative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gh">Out[30]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b31c1510&gt;</span>
+<span class="gh">Out[30]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c470b990&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hist_new_kwargs.png" src="../_images/hist_new_kwargs.png" />
@@ -599,7 +599,7 @@ horizontal and cumulative histograms can be drawn by
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [31]: </span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 
 <span class="gp">In [32]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
-<span class="gh">Out[32]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b3174b10&gt;</span>
+<span class="gh">Out[32]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03759ede10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hist_plot_ex.png" src="../_images/hist_plot_ex.png" />
@@ -610,10 +610,10 @@ subplots:</p>
 
 <span class="gp">In [34]: </span><span class="n">df</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 <span class="gh">Out[34]: </span><span class="go"></span>
-<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b3174850&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b3560b10&gt;],</span>
-<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b350b810&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b357e790&gt;]],</span>
+<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f037706a510&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03776195d0&gt;],</span>
+<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03763c9810&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0376c87b10&gt;]],</span>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
@@ -623,10 +623,10 @@ subplots:</p>
 
 <span class="gp">In [36]: </span><span class="n">data</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gh">Out[36]: </span><span class="go"></span>
-<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b3407790&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f635dfb2850&gt;],</span>
-<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f635e000890&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f635e100690&gt;]],</span>
+<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03764d5090&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03764f3b50&gt;],</span>
+<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0376631e50&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0377107c10&gt;]],</span>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
@@ -641,7 +641,7 @@ a uniform random variable on [0,1).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [37]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">])</span>
 
 <span class="gp">In [38]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">()</span>
-<span class="gh">Out[38]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635e516590&gt;</span>
+<span class="gh">Out[38]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03774b4290&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/box_plot_new.png" src="../_images/box_plot_new.png" />
@@ -660,7 +660,7 @@ more complicated colorization, you can get each drawn artists by passing
 <span class="gp">   ....: </span>
 
 <span class="gp">In [40]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">sym</span><span class="o">=</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span>
-<span class="gh">Out[40]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635df0f2d0&gt;</span>
+<span class="gh">Out[40]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c3e4f650&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/box_new_colorize.png" src="../_images/box_new_colorize.png" />
@@ -668,7 +668,7 @@ more complicated colorization, you can get each drawn artists by passing
 For example, horizontal and custom-positioned boxplot can be drawn by
 <code class="docutils literal notranslate"><span class="pre">vert=False</span></code> and <code class="docutils literal notranslate"><span class="pre">positions</span></code> keywords.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [41]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-<span class="gh">Out[41]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635fd46090&gt;</span>
+<span class="gh">Out[41]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0376843b50&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/box_new_kwargs.png" src="../_images/box_new_kwargs.png" />
@@ -840,7 +840,7 @@ too dense to plot each point individually.</p>
 <span class="gp">In [70]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
 
 <span class="gp">In [71]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="gh">Out[71]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635efa62d0&gt;</span>
+<span class="gh">Out[71]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0375f06390&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hexbin_plot.png" src="../_images/hexbin_plot.png" />
@@ -861,7 +861,7 @@ given by column <code class="docutils literal notranslate"><span class="pre">z</
 <span class="gp">In [74]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 
 <span class="gp">In [75]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="n">reduce_C_function</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="gh">Out[75]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635f4eb7d0&gt;</span>
+<span class="gh">Out[75]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03741c14d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/hexbin_plot_agg.png" src="../_images/hexbin_plot_agg.png" />
@@ -878,7 +878,7 @@ A <code class="docutils literal notranslate"><span class="pre">ValueError</span>
 <span class="gp">   ....: </span>
 
 <span class="gp">In [77]: </span><span class="n">series</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="gh">Out[77]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635f4eb990&gt;</span>
+<span class="gh">Out[77]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03d0f4af10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_pie_plot.png" src="../_images/series_pie_plot.png" />
@@ -897,8 +897,8 @@ drawn in each pie plots by default; specify <code class="docutils literal notran
 
 <span class="gp">In [79]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">subplots</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gh">Out[79]: </span><span class="go"></span>
-<span class="go">array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63642e30d0&gt;,</span>
-<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364966450&gt;],</span>
+<span class="go">array([&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0375970910&gt;,</span>
+<span class="go">       &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03747d2810&gt;],</span>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
@@ -915,7 +915,7 @@ Also, other keywords supported by <a class="reference external" href="https://ma
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [80]: </span><span class="n">series</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;AA&#39;</span><span class="p">,</span> <span class="s1">&#39;BB&#39;</span><span class="p">,</span> <span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="s1">&#39;DD&#39;</span><span class="p">],</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span>
 <span class="gp">   ....: </span>                <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="gp">   ....: </span>
-<span class="gh">Out[80]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6367957150&gt;</span>
+<span class="gh">Out[80]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f037429c950&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_pie_plot_options.png" src="../_images/series_pie_plot_options.png" />
@@ -923,7 +923,7 @@ Also, other keywords supported by <a class="reference external" href="https://ma
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [81]: </span><span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">],</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;series2&#39;</span><span class="p">)</span>
 
 <span class="gp">In [82]: </span><span class="n">series</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="gh">Out[82]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6367995590&gt;</span>
+<span class="gh">Out[82]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0375a82950&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_pie_plot_semi.png" src="../_images/series_pie_plot_semi.png" />
@@ -997,22 +997,22 @@ and take a <a class="reference internal" href="../reference/api/pandas.Series.ht
 
 <span class="gp">In [85]: </span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">diagonal</span><span class="o">=</span><span class="s1">&#39;kde&#39;</span><span class="p">)</span>
 <span class="gh">Out[85]: </span><span class="go"></span>
-<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364882b90&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a7921b10&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364583d10&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63a5bb1750&gt;],</span>
-<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364c0efd0&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364762050&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63648bd550&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364cbaf50&gt;],</span>
-<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364c74dd0&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f6364c5af10&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63ada0ac90&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63b364c990&gt;],</span>
-<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f635e84f410&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63944c7810&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63679e4810&gt;,</span>
-<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f63e6849a10&gt;]],</span>
+<span class="go">array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0375f41950&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0374b39b90&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03759adf90&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0377578110&gt;],</span>
+<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0375d37e90&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0376326a50&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03766f4790&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03756dcd10&gt;],</span>
+<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0375581150&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03750876d0&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03bc1fad10&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0376137d50&gt;],</span>
+<span class="go">       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f037761b550&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03775d4510&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f0375d76ed0&gt;,</span>
+<span class="go">        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x7f03775f90d0&gt;]],</span>
 <span class="go">      dtype=object)</span>
 </pre></div>
 </div>
@@ -1024,7 +1024,7 @@ and take a <a class="reference internal" href="../reference/api/pandas.Series.ht
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [86]: </span><span class="n">ser</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
 
 <span class="gp">In [87]: </span><span class="n">ser</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">()</span>
-<span class="gh">Out[87]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63942e57d0&gt;</span>
+<span class="gh">Out[87]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0373eb1650&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/kde_plot.png" src="../_images/kde_plot.png" />
@@ -1046,7 +1046,7 @@ of the same class will usually be closer together and form larger structures.</p
 <span class="gh">Out[90]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [91]: </span><span class="n">andrews_curves</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-<span class="gh">Out[91]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635e2ba190&gt;</span>
+<span class="gh">Out[91]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0374e11b10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/andrews_curves.png" src="../_images/andrews_curves.png" />
@@ -1068,7 +1068,7 @@ represents one data point. Points that tend to cluster will appear closer togeth
 <span class="gh">Out[94]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [95]: </span><span class="n">parallel_coordinates</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-<span class="gh">Out[95]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635eca9990&gt;</span>
+<span class="gh">Out[95]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03753fa5d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/parallel_coordinates.png" src="../_images/parallel_coordinates.png" />
@@ -1090,7 +1090,7 @@ be passed, and when <code class="docutils literal notranslate"><span class="pre"
 <span class="gp">In [99]: </span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">spacing</span><span class="p">))</span>
 
 <span class="gp">In [100]: </span><span class="n">lag_plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gh">Out[100]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635eca9a90&gt;</span>
+<span class="gh">Out[100]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0377074550&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/lag_plot.png" src="../_images/lag_plot.png" />
@@ -1116,7 +1116,7 @@ autocorrelation plots.</p>
 <span class="gp">In [104]: </span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">spacing</span><span class="p">))</span>
 
 <span class="gp">In [105]: </span><span class="n">autocorrelation_plot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gh">Out[105]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635e637410&gt;</span>
+<span class="gh">Out[105]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03746ed8d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/autocorrelation_plot.png" src="../_images/autocorrelation_plot.png" />
@@ -1161,7 +1161,7 @@ for more information.</p>
 <span class="gh">Out[111]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [112]: </span><span class="n">radviz</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">)</span>
-<span class="gh">Out[112]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635fa33190&gt;</span>
+<span class="gh">Out[112]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0373fde750&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/radviz.png" src="../_images/radviz.png" />
@@ -1207,7 +1207,7 @@ shown by default.</p>
 <span class="gp">In [116]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 
 <span class="gp">In [117]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="gh">Out[117]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635f74e3d0&gt;</span>
+<span class="gh">Out[117]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0374010110&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/frame_plot_basic_noleg.png" src="../_images/frame_plot_basic_noleg.png" />
@@ -1222,7 +1222,7 @@ shown by default.</p>
 <span class="gp">In [119]: </span><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">cumsum</span><span class="p">())</span>
 
 <span class="gp">In [120]: </span><span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">logy</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gh">Out[120]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f636468c550&gt;</span>
+<span class="gh">Out[120]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0374086310&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_plot_logy.png" src="../_images/series_plot_logy.png" />
@@ -1232,10 +1232,10 @@ shown by default.</p>
 <h3>Plotting on a secondary y-axis<a class="headerlink" href="#plotting-on-a-secondary-y-axis" title="Permalink to this headline">¶</a></h3>
 <p>To plot data on a secondary y-axis, use the <code class="docutils literal notranslate"><span class="pre">secondary_y</span></code> keyword:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [121]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[121]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635e27ad50&gt;</span>
+<span class="gh">Out[121]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0376db4c10&gt;</span>
 
 <span class="gp">In [122]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="gh">Out[122]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63942aca90&gt;</span>
+<span class="gh">Out[122]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0376232650&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/series_plot_secondary_y.png" src="../_images/series_plot_secondary_y.png" />
@@ -1261,7 +1261,7 @@ with “(right)” in the legend. To turn off the automatic marking, use the
 <span class="gh">Out[127]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [128]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">secondary_y</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="n">mark_right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="gh">Out[128]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63641bfa50&gt;</span>
+<span class="gh">Out[128]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03757f1810&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/frame_plot_secondary_y_no_right.png" src="../_images/frame_plot_secondary_y_no_right.png" />
@@ -1290,7 +1290,7 @@ suppress this behavior for alignment purposes.</p>
 <span class="gh">Out[129]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [130]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[130]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635eeaf810&gt;</span>
+<span class="gh">Out[130]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f037688c550&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/ser_plot_suppress.png" src="../_images/ser_plot_suppress.png" />
@@ -1299,7 +1299,7 @@ suppress this behavior for alignment purposes.</p>
 <span class="gh">Out[131]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [132]: </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_compat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gh">Out[132]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635eb20710&gt;</span>
+<span class="gh">Out[132]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03761a9c90&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/ser_plot_suppress_parm.png" src="../_images/ser_plot_suppress_parm.png" />
@@ -1450,7 +1450,7 @@ otherwise you will see a warning.</p>
 <span class="gp">In [160]: </span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 
 <span class="gp">In [161]: </span><span class="n">means</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">yerr</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">capsize</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-<span class="gh">Out[161]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b37ad290&gt;</span>
+<span class="gh">Out[161]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036e1086d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/errorbar_example.png" src="../_images/errorbar_example.png" />
@@ -1465,7 +1465,7 @@ otherwise you will see a warning.</p>
 <span class="gp">In [164]: </span><span class="n">ax</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># Hide Ticks</span>
 
 <span class="gp">In [165]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="gh">Out[165]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635e5fb510&gt;</span>
+<span class="gh">Out[165]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036e045f10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/line_plot_table_true.png" src="../_images/line_plot_table_true.png" />
@@ -1478,7 +1478,7 @@ as seen in the example below.</p>
 <span class="gp">In [167]: </span><span class="n">ax</span><span class="o">.</span><span class="n">get_xaxis</span><span class="p">()</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># Hide Ticks</span>
 
 <span class="gp">In [168]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">table</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="gh">Out[168]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63647fa0d0&gt;</span>
+<span class="gh">Out[168]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036dfedcd0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/line_plot_table_data.png" src="../_images/line_plot_table_data.png" />
@@ -1493,10 +1493,10 @@ matplotlib <a class="reference external" href="http://matplotlib.org/api/axes_ap
 <span class="gp">In [171]: </span><span class="n">table</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(),</span> <span class="mi">2</span><span class="p">),</span>
 <span class="gp">   .....: </span>      <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">colWidths</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">])</span>
 <span class="gp">   .....: </span>
-<span class="gh">Out[171]: </span><span class="go">&lt;matplotlib.table.Table at 0x7f6364258650&gt;</span>
+<span class="gh">Out[171]: </span><span class="go">&lt;matplotlib.table.Table at 0x7f036deee910&gt;</span>
 
 <span class="gp">In [172]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<span class="gh">Out[172]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f6364528a90&gt;</span>
+<span class="gh">Out[172]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036df24050&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/line_plot_table_describe.png" src="../_images/line_plot_table_describe.png" />
@@ -1523,7 +1523,7 @@ colormaps will produce lines that are not easily visible.</p>
 <span class="gh">Out[175]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [176]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;cubehelix&#39;</span><span class="p">)</span>
-<span class="gh">Out[176]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635fa8ae90&gt;</span>
+<span class="gh">Out[176]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036de098d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/cubehelix.png" src="../_images/cubehelix.png" />
@@ -1534,7 +1534,7 @@ colormaps will produce lines that are not easily visible.</p>
 <span class="gh">Out[178]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [179]: </span><span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">colormap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">cubehelix</span><span class="p">)</span>
-<span class="gh">Out[179]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635f9b7350&gt;</span>
+<span class="gh">Out[179]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03712e3450&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/cubehelix_cm.png" src="../_images/cubehelix_cm.png" />
@@ -1547,7 +1547,7 @@ colormaps will produce lines that are not easily visible.</p>
 <span class="gh">Out[182]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [183]: </span><span class="n">dd</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;Greens&#39;</span><span class="p">)</span>
-<span class="gh">Out[183]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63b30cbf50&gt;</span>
+<span class="gh">Out[183]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0375ae5c10&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/greens.png" src="../_images/greens.png" />
@@ -1556,7 +1556,7 @@ colormaps will produce lines that are not easily visible.</p>
 <span class="gh">Out[184]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [185]: </span><span class="n">parallel_coordinates</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;gist_rainbow&#39;</span><span class="p">)</span>
-<span class="gh">Out[185]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635f133890&gt;</span>
+<span class="gh">Out[185]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f037515c5d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/parallel_gist_rainbow.png" src="../_images/parallel_gist_rainbow.png" />
@@ -1565,7 +1565,7 @@ colormaps will produce lines that are not easily visible.</p>
 <span class="gh">Out[186]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [187]: </span><span class="n">andrews_curves</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">colormap</span><span class="o">=</span><span class="s1">&#39;winter&#39;</span><span class="p">)</span>
-<span class="gh">Out[187]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635ae45fd0&gt;</span>
+<span class="gh">Out[187]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f036dd769d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/andrews_curve_winter.png" src="../_images/andrews_curve_winter.png" />
@@ -1595,15 +1595,15 @@ when plotting a large number of points.</p>
 <span class="gh">Out[191]: </span><span class="go">&lt;Figure size 640x480 with 0 Axes&gt;</span>
 
 <span class="gp">In [192]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">price</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="gh">Out[192]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7f635abd1390&gt;]</span>
+<span class="gh">Out[192]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7f03761dddd0&gt;]</span>
 
 <span class="gp">In [193]: </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ma</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ma</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="gh">Out[193]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7f6364258d50&gt;]</span>
+<span class="gh">Out[193]: </span><span class="go">[&lt;matplotlib.lines.Line2D at 0x7f03bc281190&gt;]</span>
 
 <span class="gp">In [194]: </span><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">mstd</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">ma</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mstd</span><span class="p">,</span> <span class="n">ma</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">mstd</span><span class="p">,</span>
 <span class="gp">   .....: </span>                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="gp">   .....: </span>
-<span class="gh">Out[194]: </span><span class="go">&lt;matplotlib.collections.PolyCollection at 0x7f635ab868d0&gt;</span>
+<span class="gh">Out[194]: </span><span class="go">&lt;matplotlib.collections.PolyCollection at 0x7f0371337310&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/bollinger.png" src="../_images/bollinger.png" />

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Scaling to large datasets &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>Scaling to large datasets &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -526,8 +526,8 @@ work for arbitrary-sized datasets.</p>
 <span class="gp">   ....: </span>    <span class="n">counts</span> <span class="o">=</span> <span class="n">counts</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(),</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">   ....: </span><span class="n">counts</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="gp">   ....: </span>
-<span class="go">CPU times: user 2.13 s, sys: 197 ms, total: 2.33 s</span>
-<span class="go">Wall time: 1.83 s</span>
+<span class="go">CPU times: user 1.9 s, sys: 202 ms, total: 2.1 s</span>
+<span class="go">Wall time: 1.65 s</span>
 <span class="gh">Out[19]: </span><span class="go"></span>
 <span class="go">Alice      229802</span>
 <span class="go">Bob        229211</span>
@@ -649,8 +649,8 @@ is a pandas Series with a certain dtype and a certain name. So the Dask version
 returns a Dask Series with the same dtype and the same name.</p>
 <p>To get the actual result you can call <code class="docutils literal notranslate"><span class="pre">.compute()</span></code>.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [29]: </span><span class="o">%</span><span class="k">time</span> ddf[&#39;name&#39;].value_counts().compute()
-<span class="go">CPU times: user 1.55 s, sys: 189 ms, total: 1.73 s</span>
-<span class="go">Wall time: 1.12 s</span>
+<span class="go">CPU times: user 2.7 s, sys: 214 ms, total: 2.91 s</span>
+<span class="go">Wall time: 2.25 s</span>
 <span class="gh">Out[29]: </span><span class="go"></span>
 <span class="go">Laura      230906</span>
 <span class="go">Ingrid     230838</span>
@@ -690,8 +690,8 @@ the cluster (which is just processes in this case).</p>
 <p>Dask implements the most used parts of the pandas API. For example, we can do
 a familiar groupby aggregation.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [30]: </span><span class="o">%</span><span class="k">time</span> ddf.groupby(&#39;name&#39;)[[&#39;x&#39;, &#39;y&#39;]].mean().compute().head()
-<span class="go">CPU times: user 2.64 s, sys: 486 ms, total: 3.13 s</span>
-<span class="go">Wall time: 1.42 s</span>
+<span class="go">CPU times: user 3.42 s, sys: 959 ms, total: 4.38 s</span>
+<span class="go">Wall time: 1.96 s</span>
 <span class="gh">Out[30]: </span><span class="go"></span>
 <span class="go">                x         y</span>
 <span class="go">name                       </span>
@@ -750,7 +750,7 @@ to daily frequency and take the mean. Once we’ve taken the mean, we know the
 results will fit in memory, so we can safely call <code class="docutils literal notranslate"><span class="pre">compute</span></code> without running
 out of memory. At that point it’s just a regular pandas object.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="n">ddf</span><span class="p">[[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;1D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[38]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f635a83d650&gt;</span>
+<span class="gh">Out[38]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03739c20d0&gt;</span>
 </pre></div>
 </div>
 <img alt="../_images/dask_resample.png" src="../_images/dask_resample.png" />

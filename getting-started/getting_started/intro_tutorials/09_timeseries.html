@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How to handle time series data with ease? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>How to handle time series data with ease? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="">
-                          <a href="01_table_oriented.html">What kind of data does Pandas handle?</a>
+                          <a href="01_table_oriented.html">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -302,7 +302,7 @@ Westminster</em> in respectively Paris, Antwerp and London.</p>
 <div class="section" id="using-pandas-datetime-properties">
 <h2>Using pandas datetime properties<a class="headerlink" href="#using-pandas-datetime-properties" title="Permalink to this headline">¶</a></h2>
 <ul class="task-bullet">
-    <li><p>I want to work with the dates in the column ‘datetime’ as datetime objects instead of plain text</p>
+    <li><p>I want to work with the dates in the column <code class="docutils literal notranslate"><span class="pre">datetime</span></code> as datetime objects instead of plain text</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">])</span>
 
 <span class="gp">In [8]: </span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span>
@@ -326,12 +326,12 @@ provide any datetime operations (e.g. extract the year, day of the
 week,…). By applying the <code class="docutils literal notranslate"><span class="pre">to_datetime</span></code> function, pandas interprets the
 strings and convert these to datetime (i.e. <code class="docutils literal notranslate"><span class="pre">datetime64[ns,</span> <span class="pre">UTC]</span></code>)
 objects. In pandas we call these datetime objects similar to
-<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> from the standard library a <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> from the standard library a <a class="reference internal" href="../../reference/api/pandas.Timestamp.html#pandas.Timestamp" title="pandas.Timestamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a>.</p>
     </li>
 </ul><div class="alert alert-info">
 <p class="admonition-title">Note</p>
 <p>As many data sets do contain datetime information in one of
-the columns, pandas input function like <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> and <code class="docutils literal notranslate"><span class="pre">read_json</span></code>
+the columns, pandas input function like <a class="reference internal" href="../../reference/api/pandas.read_csv.html#pandas.read_csv" title="pandas.read_csv"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_csv()</span></code></a> and <a class="reference internal" href="../../reference/api/pandas.read_json.html#pandas.read_json" title="pandas.read_json"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.read_json()</span></code></a>
 can do the transformation to dates when reading the data using the
 <code class="docutils literal notranslate"><span class="pre">parse_dates</span></code> parameter with a list of the columns to read as
 Timestamp:</p>
@@ -339,7 +339,7 @@ Timestamp:</p>
 </pre></div>
 </div>
 </div>
-<p>Why are these <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> objects useful. Let’s illustrate the added
+<p>Why are these <a class="reference internal" href="../../reference/api/pandas.Timestamp.html#pandas.Timestamp" title="pandas.Timestamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> objects useful. Let’s illustrate the added
 value with some example cases.</p>
 <blockquote>
 <div><p>What is the start and end date of the time series data set working
@@ -351,19 +351,19 @@ with?</p>
 <span class="go"> Timestamp(&#39;2019-06-21 00:00:00+0000&#39;, tz=&#39;UTC&#39;))</span>
 </pre></div>
 </div>
-<p>Using <code class="docutils literal notranslate"><span class="pre">Timestamp</span></code> for datetimes enable us to calculate with date
+<p>Using <a class="reference internal" href="../../reference/api/pandas.Timestamp.html#pandas.Timestamp" title="pandas.Timestamp"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timestamp</span></code></a> for datetimes enable us to calculate with date
 information and make them comparable. Hence, we can use this to get the
 length of our time series:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
 <span class="gh">Out[10]: </span><span class="go">Timedelta(&#39;44 days 23:00:00&#39;)</span>
 </pre></div>
 </div>
-<p>The result is a <code class="docutils literal notranslate"><span class="pre">Timedelta</span></code> object, similar to <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>
+<p>The result is a <a class="reference internal" href="../../reference/api/pandas.Timedelta.html#pandas.Timedelta" title="pandas.Timedelta"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Timedelta</span></code></a> object, similar to <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code>
 from the standard Python library and defining a time duration.</p>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>The main time related concepts of pandas are explained in <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-overview"><span class="std std-ref">Overview</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>The different time concepts supported by pandas are explained in the user guide section on <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-overview"><span class="std std-ref">time related concepts</span></a>.</p>
 </div><ul class="task-bullet">
-    <li><p>I want to add a new column to the dataframe containing only the month of the measurement</p>
+    <li><p>I want to add a new column to the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> containing only the month of the measurement</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;month&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
 
 <span class="gp">In [12]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -382,13 +382,14 @@ properties are provided by pandas. For example the <code class="docutils literal
 accessible by the <code class="docutils literal notranslate"><span class="pre">dt</span></code> accessor.</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>An overview of the existing properties is given in
-<a class="reference internal" href="../../user_guide/timeseries.html#timeseries-components"><span class="std std-ref">Time/date components</span></a>. More details about the <code class="docutils literal notranslate"><span class="pre">dt</span></code> accessor
-to return datetime like properties for the values of the Series are
-provided in <a class="reference internal" href="../basics.html#basics-dt-accessors"><span class="std std-ref">.dt accessor</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>An overview of the existing date properties is given in the
+<a class="reference internal" href="../../user_guide/timeseries.html#timeseries-components"><span class="std std-ref">time and date components overview table</span></a>. More details about the <code class="docutils literal notranslate"><span class="pre">dt</span></code> accessor
+to return datetime like properties is explained in a dedicated section on the  <a class="reference internal" href="../basics.html#basics-dt-accessors"><span class="std std-ref">dt accessor</span></a>.</p>
 </div><ul class="task-bullet">
     <li><p>What is the average <span class="math notranslate nohighlight">\(NO_2\)</span> concentration for each day of the week for each of the measurement locations?</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">])[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+<span class="gp">   ....: </span>    <span class="p">[</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">weekday</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">])[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="gp">   ....: </span>
 <span class="gh">Out[13]: </span><span class="go"></span>
 <span class="go">datetime  location          </span>
 <span class="go">0         BETR801               27.875000</span>
@@ -424,12 +425,16 @@ result!</p>
     <li><p>Plot the typical <span class="math notranslate nohighlight">\(NO_2\)</span> pattern during the day of our time series of all stations together. In other words, what is the average value for each hour of the day?</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [14]: </span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
-<span class="gp">In [15]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">)</span>
-<span class="gh">Out[15]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63ae317a50&gt;</span>
+<span class="gp">In [15]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+<span class="gp">   ....: </span>    <span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">hour</span><span class="p">)[</span><span class="s2">&quot;value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span>
+<span class="gp">   ....: </span>                                                          <span class="n">rot</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="gp">   ....: </span>                                                          <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">)</span>
+<span class="gp">   ....: </span>
+<span class="gh">Out[15]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c45d8690&gt;</span>
 
-<span class="gp">In [16]: </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hour of the day&quot;</span><span class="p">);</span> <span class="c1"># custom label for the x-axis using matplotlib</span>
+<span class="gp">In [16]: </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Hour of the day&quot;</span><span class="p">);</span>  <span class="c1"># custom x label using matplotlib</span>
 
-<span class="gp">In [17]: </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$NO_2\ (µg/m^3)$&quot;</span><span class="p">);</span>
+<span class="gp">In [17]: </span><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$NO_2 (µg/m^3)$&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <img alt="../../_images/09_bar_chart.png" src="../../_images/09_bar_chart.png" />
@@ -442,7 +447,7 @@ of pandas <code class="docutils literal notranslate"><span class="pre">Timestamp
 <div class="section" id="datetime-as-index">
 <h2>Datetime as index<a class="headerlink" href="#datetime-as-index" title="Permalink to this headline">¶</a></h2>
 <p>In the <a class="reference internal" href="07_reshape_table_layout.html#min-tut-07-reshape"><span class="std std-ref">tutorial on reshaping</span></a>,
-<code class="docutils literal notranslate"><span class="pre">pivot</span></code> was introduced to reshape the data table with each of the
+<a class="reference internal" href="../../reference/api/pandas.pivot.html#pandas.pivot" title="pandas.pivot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot()</span></code></a> was introduced to reshape the data table with each of the
 measurements locations as a separate column:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [18]: </span><span class="n">no_2</span> <span class="o">=</span> <span class="n">air_quality</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s2">&quot;datetime&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
 
@@ -483,14 +488,14 @@ index directly:</p>
 the adapted time scale on plots. Let’s apply this on our data.</p>
 <ul class="task-bullet">
     <li><p>Create a plot of the <span class="math notranslate nohighlight">\(NO_2\)</span> values in the different stations from the 20th of May till the end of 21st of May</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">no_2</span><span class="p">[</span><span class="s2">&quot;2019-05-20&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-05-21&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [21]: </span><span class="n">no_2</span><span class="p">[</span><span class="s2">&quot;2019-05-20&quot;</span><span class="p">:</span><span class="s2">&quot;2019-05-21&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 <img alt="../../_images/09_time_section.png" src="../../_images/09_time_section.png" />
 <p>By providing a <strong>string that parses to a datetime</strong>, a specific subset of the data can be selected on a <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code>.</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on the <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code> and the slicing by using strings is provided in <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-datetimeindex"><span class="std std-ref">Indexing</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>More information on the <code class="docutils literal notranslate"><span class="pre">DatetimeIndex</span></code> and the slicing by using strings is provided in the section on <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-datetimeindex"><span class="std std-ref">time series indexing</span></a>.</p>
 </div></div>
 <div class="section" id="resample-a-time-series-to-another-frequency">
 <h2>Resample a time series to another frequency<a class="headerlink" href="#resample-a-time-series-to-another-frequency" title="Permalink to this headline">¶</a></h2>
@@ -507,17 +512,17 @@ the adapted time scale on plots. Let’s apply this on our data.</p>
 </pre></div>
 </div>
 <p>A very powerful method on time series data with a datetime index, is the
-ability to <code class="docutils literal notranslate"><span class="pre">resample</span></code> time series to another frequency (e.g.,
+ability to <a class="reference internal" href="../../reference/api/pandas.Series.resample.html#pandas.Series.resample" title="pandas.Series.resample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resample()</span></code></a> time series to another frequency (e.g.,
 converting secondly data into 5-minutely data).</p>
     </li>
-</ul><p>The <code class="docutils literal notranslate"><span class="pre">resample</span></code> method is similar to a groupby operation:</p>
+</ul><p>The <a class="reference internal" href="../../reference/api/pandas.Series.resample.html#pandas.Series.resample" title="pandas.Series.resample"><code class="xref py py-meth docutils literal notranslate"><span class="pre">resample()</span></code></a> method is similar to a groupby operation:</p>
 <ul class="simple">
 <li><p>it provides a time-based grouping, by using a string (e.g. <code class="docutils literal notranslate"><span class="pre">M</span></code>,
 <code class="docutils literal notranslate"><span class="pre">5H</span></code>,…) that defines the target frequency</p></li>
 <li><p>it requires an aggregation function such as <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>,…</p></li>
 </ul>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>An overview of the aliases used to define time series frequencies (alos called <em>offset aliases</em>) is given in <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-offset-aliases"><span class="std std-ref">Offset aliases</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>An overview of the aliases used to define time series frequencies is given in the <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-offset-aliases"><span class="std std-ref">offset aliases overview table</span></a>.</p>
 </div><p>When defined, the frequency of the time series is provided by the
 <code class="docutils literal notranslate"><span class="pre">freq</span></code> attribute:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [24]: </span><span class="n">monthly_max</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span>
@@ -527,12 +532,12 @@ converting secondly data into 5-minutely data).</p>
 <ul class="task-bullet">
     <li><p>Make a plot of the daily median <span class="math notranslate nohighlight">\(NO_2\)</span> value in each of the stations.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [25]: </span><span class="n">no_2</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<span class="gh">Out[25]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63adcd0c50&gt;</span>
+<span class="gh">Out[25]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c414ef50&gt;</span>
 </pre></div>
 </div>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More details on the power of time series <code class="docutils literal notranslate"><span class="pre">resampling</span></code> is provided in <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-resampling"><span class="std std-ref">Resampling</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>More details on the power of time series <code class="docutils literal notranslate"><span class="pre">resampling</span></code> is provided in the user gudie section on <a class="reference internal" href="../../user_guide/timeseries.html#timeseries-resampling"><span class="std std-ref">resampling</span></a>.</p>
 </div><div class="shadow gs-callout gs-callout-remember">
     <h4>REMEMBER</h4><ul class="simple">
 <li><p>Valid date strings can be converted to datetime objects using
@@ -545,7 +550,7 @@ supports convenient slicing.</p></li>
 series.</p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on time series and date functionalities is given in <a class="reference internal" href="../../user_guide/timeseries.html#timeseries"><span class="std std-ref">Time series / date functionality</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A full overview on time series is given in the pages on <a class="reference internal" href="../../user_guide/timeseries.html#timeseries"><span class="std std-ref">time series and date functionality</span></a>.</p>
 </div></div>
 </div>
 

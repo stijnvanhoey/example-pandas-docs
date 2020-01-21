@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How to calculate summary statistics? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>How to calculate summary statistics? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="">
-                          <a href="01_table_oriented.html">What kind of data does Pandas handle?</a>
+                          <a href="01_table_oriented.html">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -289,12 +289,12 @@ for survived.</p></li>
 
 <span class="gp">In [3]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[3]: </span><span class="go"></span>
-<span class="go">   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked</span>
-<span class="go">0            1         0       3  ...   7.2500   NaN         S</span>
-<span class="go">1            2         1       1  ...  71.2833   C85         C</span>
-<span class="go">2            3         1       3  ...   7.9250   NaN         S</span>
-<span class="go">3            4         1       1  ...  53.1000  C123         S</span>
-<span class="go">4            5         0       3  ...   8.0500   NaN         S</span>
+<span class="go">   PassengerId  Survived  Pclass                                               Name     Sex  ...  Parch            Ticket     Fare Cabin  Embarked</span>
+<span class="go">0            1         0       3                            Braund, Mr. Owen Harris    male  ...      0         A/5 21171   7.2500   NaN         S</span>
+<span class="go">1            2         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  ...      0          PC 17599  71.2833   C85         C</span>
+<span class="go">2            3         1       3                             Heikkinen, Miss. Laina  female  ...      0  STON/O2. 3101282   7.9250   NaN         S</span>
+<span class="go">3            4         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  ...      0            113803  53.1000  C123         S</span>
+<span class="go">4            5         0       3                           Allen, Mr. William Henry    male  ...      0            373450   8.0500   NaN         S</span>
 
 <span class="go">[5 rows x 12 columns]</span>
 </pre></div>
@@ -346,9 +346,9 @@ same time. Remember the <code class="docutils literal notranslate"><span class="
 </div>
 <p>Instead of the predefined statistics, specific combinations of
 aggregating statistics for given columns can be defined using the
-<code class="docutils literal notranslate"><span class="pre">agg</span></code> method:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Age&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;skew&#39;</span><span class="p">],</span>
-<span class="gp">   ...: </span>             <span class="s1">&#39;Fare&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">]})</span>
+<a class="reference internal" href="../../reference/api/pandas.DataFrame.agg.html#pandas.DataFrame.agg" title="pandas.DataFrame.agg"><code class="xref py py-func docutils literal notranslate"><span class="pre">DataFrame.agg()</span></code></a> method:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;skew&#39;</span><span class="p">],</span>
+<span class="gp">   ...: </span>             <span class="s1">&#39;Fare&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">]})</span>
 <span class="gp">   ...: </span>
 <span class="gh">Out[7]: </span><span class="go"></span>
 <span class="go">              Age        Fare</span>
@@ -360,7 +360,7 @@ aggregating statistics for given columns can be defined using the
 </pre></div>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Further details about descriptive statistics is provided in <a class="reference internal" href="../basics.html#basics-stats"><span class="std std-ref">Descriptive statistics</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>Details about descriptive statistics are provided in the user guide section on <a class="reference internal" href="../basics.html#basics-stats"><span class="std std-ref">descriptive statistics</span></a>.</p>
 </div></div>
 <div class="section" id="aggregating-statistics-grouped-by-category">
 <h2>Aggregating statistics grouped by category<a class="headerlink" href="#aggregating-statistics-grouped-by-category" title="Permalink to this headline">¶</a></h2>
@@ -377,7 +377,7 @@ aggregating statistics for given columns can be defined using the
 </div>
 <p>As our interest is the average age for each gender, a subselection on
 these two columns is made first: <code class="docutils literal notranslate"><span class="pre">titanic[[&quot;Sex&quot;,</span> <span class="pre">&quot;Age&quot;]]</span></code>. Next, the
-<code class="docutils literal notranslate"><span class="pre">groupby</span></code> method is applied on the <code class="docutils literal notranslate"><span class="pre">Sex</span></code> column to make a group per
+<a class="reference internal" href="../../reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="pandas.DataFrame.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method is applied on the <code class="docutils literal notranslate"><span class="pre">Sex</span></code> column to make a group per
 category. The average age <em>for each gender</em> is calculated and
 returned.</p>
     </li>
@@ -439,10 +439,10 @@ type of data. More information is provided in the user guide
 </pre></div>
 </div>
 <p>Grouping can be done by multiple columns at the same time. Provide the
-column names as a list to the <code class="docutils literal notranslate"><span class="pre">groupby</span></code> method.</p>
+column names as a list to the <a class="reference internal" href="../../reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="pandas.DataFrame.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> method.</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on groupby and the split-apply-combine approach is provided in <a class="reference internal" href="../../user_guide/groupby.html#groupby"><span class="std std-ref">Group By: split-apply-combine</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A full description on the split-apply-combine approach is provided in the user guide section on <a class="reference internal" href="../../user_guide/groupby.html#groupby"><span class="std std-ref">groupby operations</span></a>.</p>
 </div></div>
 <div class="section" id="count-number-of-records-by-category">
 <h2>Count number of records by category<a class="headerlink" href="#count-number-of-records-by-category" title="Permalink to this headline">¶</a></h2>
@@ -457,7 +457,7 @@ column names as a list to the <code class="docutils literal notranslate"><span c
 <span class="go">Name: Pclass, dtype: int64</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> function counts the number of records for each
+<p>The <a class="reference internal" href="../../reference/api/pandas.Series.value_counts.html#pandas.Series.value_counts" title="pandas.Series.value_counts"><code class="xref py py-meth docutils literal notranslate"><span class="pre">value_counts()</span></code></a> method counts the number of records for each
 category in a column.</p>
     </li>
 </ul><p>The function is a shortcut, as it is actually a groupby operation in combination with counting of the number of records
@@ -480,7 +480,7 @@ values. In the <code class="docutils literal notranslate"><span class="pre">valu
 include or exclude the <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values.</p>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>For more information about <code class="docutils literal notranslate"><span class="pre">value_counts</span></code>, see <a class="reference internal" href="../basics.html#basics-discretization"><span class="std std-ref">Value counts (histogramming) / mode</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>The user guide has a dedicated section on <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> , see page on <a class="reference internal" href="../basics.html#basics-discretization"><span class="std std-ref">discretization</span></a>.</p>
 </div><div class="shadow gs-callout gs-callout-remember">
     <h4>REMEMBER</h4><ul class="simple">
 <li><p>Aggregation statistics can be calculated on entire columns or rows</p></li>
@@ -489,7 +489,7 @@ include or exclude the <code class="docutils literal notranslate"><span class="p
 entries in each category of a variable</p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on groupby and the split-apply-combine approach is provided in <a class="reference internal" href="../../user_guide/groupby.html#groupby"><span class="std std-ref">Group By: split-apply-combine</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A full description on the split-apply-combine approach is provided in the user guide pages about <a class="reference internal" href="../../user_guide/groupby.html#groupby"><span class="std std-ref">groupby operations</span></a>.</p>
 </div></div>
 </div>
 

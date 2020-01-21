@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>What’s new in 0.24.0 (January 25, 2019) &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>What’s new in 0.24.0 (January 25, 2019) &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
@@ -880,10 +880,10 @@ a new ndarray of period objects each time.</p>
 <span class="go">       Period(&#39;2000-01-03&#39;, &#39;D&#39;), Period(&#39;2000-01-04&#39;, &#39;D&#39;)], dtype=object)</span>
 
 <span class="gp">In [19]: </span><span class="nb">id</span><span class="p">(</span><span class="n">idx</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="gh">Out[19]: </span><span class="go">140064632032992</span>
+<span class="gh">Out[19]: </span><span class="go">139652834115376</span>
 
 <span class="gp">In [20]: </span><span class="nb">id</span><span class="p">(</span><span class="n">idx</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="gh">Out[20]: </span><span class="go">140066185486704</span>
+<span class="gh">Out[20]: </span><span class="go">139652832864736</span>
 </pre></div>
 </div>
 <p>If you need an actual NumPy array, use <a class="reference internal" href="../reference/api/pandas.Series.to_numpy.html#pandas.Series.to_numpy" title="pandas.Series.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.to_numpy()</span></code></a> or <a class="reference internal" href="../reference/api/pandas.Index.to_numpy.html#pandas.Index.to_numpy" title="pandas.Index.to_numpy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Index.to_numpy()</span></code></a>.</p>
@@ -1128,7 +1128,7 @@ convenient way to apply users’ predefined styling functions, and can help redu
 <span class="gp">   ....: </span>
 
 <span class="gp">In [48]: </span><span class="n">df</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">format_and_align</span><span class="p">)</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s1">&#39;Summary of results.&#39;</span><span class="p">)</span>
-<span class="gh">Out[48]: </span><span class="go">&lt;pandas.io.formats.style.Styler at 0x7f6356ce7b10&gt;</span>
+<span class="gh">Out[48]: </span><span class="go">&lt;pandas.io.formats.style.Styler at 0x7f0376bf84d0&gt;</span>
 </pre></div>
 </div>
 <p>Similar methods already exist for other classes in pandas, including <a class="reference internal" href="../reference/api/pandas.DataFrame.pipe.html#pandas.DataFrame.pipe" title="pandas.DataFrame.pipe"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.pipe()</span></code></a>,

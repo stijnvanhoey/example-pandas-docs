@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How to manipulate textual data? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>How to manipulate textual data? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="">
-                          <a href="01_table_oriented.html">What kind of data does Pandas handle?</a>
+                          <a href="01_table_oriented.html">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -275,12 +275,12 @@ for survived.</p></li>
 
 <span class="gp">In [3]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[3]: </span><span class="go"></span>
-<span class="go">   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked</span>
-<span class="go">0            1         0       3  ...   7.2500   NaN         S</span>
-<span class="go">1            2         1       1  ...  71.2833   C85         C</span>
-<span class="go">2            3         1       3  ...   7.9250   NaN         S</span>
-<span class="go">3            4         1       1  ...  53.1000  C123         S</span>
-<span class="go">4            5         0       3  ...   8.0500   NaN         S</span>
+<span class="go">   PassengerId  Survived  Pclass                                               Name     Sex  ...  Parch            Ticket     Fare Cabin  Embarked</span>
+<span class="go">0            1         0       3                            Braund, Mr. Owen Harris    male  ...      0         A/5 21171   7.2500   NaN         S</span>
+<span class="go">1            2         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  ...      0          PC 17599  71.2833   C85         C</span>
+<span class="go">2            3         1       3                             Heikkinen, Miss. Laina  female  ...      0  STON/O2. 3101282   7.9250   NaN         S</span>
+<span class="go">3            4         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  ...      0            113803  53.1000  C123         S</span>
+<span class="go">4            5         0       3                           Allen, Mr. William Henry    male  ...      0            373450   8.0500   NaN         S</span>
 
 <span class="go">[5 rows x 12 columns]</span>
 </pre></div>
@@ -336,7 +336,7 @@ on each of the values of the columns.</p>
 <span class="go">Name: Name, Length: 891, dtype: object</span>
 </pre></div>
 </div>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">split</span></code> method, each of the values is returned as a list of
+<p>Using the <a class="reference internal" href="../../reference/api/pandas.Series.str.split.html#pandas.Series.str.split" title="pandas.Series.str.split"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.split()</span></code></a> method, each of the values is returned as a list of
 2 elements. The first element is the part before the comma and the
 second element the part after the comma.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Surname&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -358,12 +358,12 @@ second element the part after the comma.</p>
 </pre></div>
 </div>
 <p>As we are only interested in the first part representing the surname
-(element 0), we can again use the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and apply <code class="docutils literal notranslate"><span class="pre">get</span></code> to
+(element 0), we can again use the <code class="docutils literal notranslate"><span class="pre">str</span></code> accessor and apply <a class="reference internal" href="../../reference/api/pandas.Series.str.get.html#pandas.Series.str.get" title="pandas.Series.str.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.get()</span></code></a> to
 extract the relevant part. Indeed, these string functions can be
 concatenated to combine multiple functions at once!</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on extracting parts of strings is available in <a class="reference internal" href="../../user_guide/text.html#text-split"><span class="std std-ref">Splitting and replacing strings</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>More information on extracting parts of strings is available in the user guide section on <a class="reference internal" href="../../user_guide/text.html#text-split"><span class="std std-ref">splitting and replacing strings</span></a>.</p>
 </div><ul class="task-bullet">
     <li><p>Extract the passenger data about the Countess on board of the Titanic.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Countess&quot;</span><span class="p">)</span>
@@ -384,14 +384,12 @@ concatenated to combine multiple functions at once!</p>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">titanic</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Countess&quot;</span><span class="p">)]</span>
 <span class="gh">Out[9]: </span><span class="go"></span>
-<span class="go">     PassengerId  Survived  Pclass  ... Cabin Embarked  Surname</span>
-<span class="go">759          760         1       1  ...   B77        S   Rothes</span>
-
-<span class="go">[1 rows x 13 columns]</span>
+<span class="go">     PassengerId  Survived  Pclass                                               Name     Sex   Age  SibSp  Parch  Ticket  Fare Cabin Embarked Surname</span>
+<span class="go">759          760         1       1  Rothes, the Countess. of (Lucy Noel Martha Dye...  female  33.0      0      0  110152  86.5   B77        S  Rothes</span>
 </pre></div>
 </div>
 <p>(<em>Interested in her story? See</em><a class="reference external" href="https://en.wikipedia.org/wiki/No%C3%ABl_Leslie,_Countess_of_Rothes">Wikipedia</a><em>!</em>)</p>
-<p>The string method <code class="docutils literal notranslate"><span class="pre">contains</span></code> checks for each of the values in the
+<p>The string method <a class="reference internal" href="../../reference/api/pandas.Series.str.contains.html#pandas.Series.str.contains" title="pandas.Series.str.contains"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.contains()</span></code></a> checks for each of the values in the
 column <code class="docutils literal notranslate"><span class="pre">Name</span></code> if the string contains the word <code class="docutils literal notranslate"><span class="pre">Countess</span></code> and returns
 for each of the values <code class="docutils literal notranslate"><span class="pre">True</span></code> (<code class="docutils literal notranslate"><span class="pre">Countess</span></code> is part of the name) of
 <code class="docutils literal notranslate"><span class="pre">False</span></code> (<code class="docutils literal notranslate"><span class="pre">Countess</span></code> is notpart of the name). This output can be used
@@ -402,12 +400,12 @@ only 1 Countess on the Titanic, we get one row as a result.</p>
 </ul><div class="alert alert-info">
 <p class="admonition-title">Note</p>
 <p>More powerful extractions on strings is supported, as the
-<code class="docutils literal notranslate"><span class="pre">contains</span></code> and <code class="docutils literal notranslate"><span class="pre">extract</span></code> methods accepts <a class="reference external" href="https://docs.python.org/3/library/re.html">regular
+<a class="reference internal" href="../../reference/api/pandas.Series.str.contains.html#pandas.Series.str.contains" title="pandas.Series.str.contains"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.contains()</span></code></a> and <a class="reference internal" href="../../reference/api/pandas.Series.str.extract.html#pandas.Series.str.extract" title="pandas.Series.str.extract"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.extract()</span></code></a> methods accepts <a class="reference external" href="https://docs.python.org/3/library/re.html">regular
 expressions</a>, but out of
 scope of this tutorial.</p>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on extracting parts of strings is available in <a class="reference internal" href="../../user_guide/text.html#text-extract"><span class="std std-ref">Extract first match in each subject (extract)</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>More information on extracting parts of strings is available in the user guide section on <a class="reference internal" href="../../user_guide/text.html#text-extract"><span class="std std-ref">string matching and extracting</span></a>.</p>
 </div><ul class="task-bullet">
     <li><p>Which passenger of the titanic has the longest name?</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [10]: </span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span>
@@ -428,7 +426,7 @@ scope of this tutorial.</p>
 </div>
 <p>To get the longest name we first have to get the lenghts of each of the
 names in the <code class="docutils literal notranslate"><span class="pre">Name</span></code> column. By using pandas string methods, the
-<code class="docutils literal notranslate"><span class="pre">len</span></code> function is applied to each of the names individually
+<a class="reference internal" href="../../reference/api/pandas.Series.str.len.html#pandas.Series.str.len" title="pandas.Series.str.len"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.str.len()</span></code></a> function is applied to each of the names individually
 (element-wise).</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [11]: </span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
 <span class="gh">Out[11]: </span><span class="go">307</span>
@@ -436,7 +434,7 @@ names in the <code class="docutils literal notranslate"><span class="pre">Name</
 </div>
 <p>Next, we need to get the corresponding location, preferably the index
 label, in the table for which the name length is the largest. The
-<code class="docutils literal notranslate"><span class="pre">idxmax</span></code> method does exactly that. It is not a string method and is
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">idxmax`()</span></code> method does exactly that. It is not a string method and is
 applied to integers, so no <code class="docutils literal notranslate"><span class="pre">str</span></code> is used.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [12]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">len</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">(),</span> <span class="s2">&quot;Name&quot;</span><span class="p">]</span>
 <span class="gh">Out[12]: </span><span class="go">&#39;Penasco y Castellana, Mrs. Victor de Satode (Maria Josefa Perez de Soto y Vallejo)&#39;</span>
@@ -468,13 +466,13 @@ we can do a selection using the <code class="docutils literal notranslate"><span
 <span class="go">Name: Sex_short, Length: 891, dtype: object</span>
 </pre></div>
 </div>
-<p>Whereas <code class="docutils literal notranslate"><span class="pre">replace</span></code> is not a string method, it provides a convenient way
+<p>Whereas <a class="reference internal" href="../../reference/api/pandas.Series.replace.html#pandas.Series.replace" title="pandas.Series.replace"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> is not a string method, it provides a convenient way
 to use mappings or vocabularies to translate certain values. It requires
 a <code class="docutils literal notranslate"><span class="pre">dictionary</span></code> to define the mapping <code class="docutils literal notranslate"><span class="pre">{from</span> <span class="pre">:</span> <span class="pre">to}</span></code>.</p>
     </li>
 </ul><div class="alert alert-warning">
 <p class="admonition-title">Warning</p>
-<p>There is also a <code class="docutils literal notranslate"><span class="pre">str.replace</span></code> methods available to replace a
+<p>There is also a <a class="reference internal" href="../../reference/api/pandas.Series.str.replace.html#pandas.Series.str.replace" title="pandas.Series.str.replace"><code class="xref py py-meth docutils literal notranslate"><span class="pre">replace()</span></code></a> methods available to replace a
 specific set of characters. However, when having a mapping of multiple
 values, this would become:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Sex_short&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titanic</span><span class="p">[</span><span class="s2">&quot;Sex&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;female&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
@@ -494,7 +492,7 @@ indexing.</p></li>
 according to a given dictionary.</p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on string methods is given in <a class="reference internal" href="../../user_guide/text.html#text"><span class="std std-ref">Working with text data</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A full overview is provided in the user guide pages on <a class="reference internal" href="../../user_guide/text.html#text"><span class="std std-ref">working with text data</span></a>.</p>
 </div></div>
 
 

@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How to combine data from multiple tables? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>How to combine data from multiple tables? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="">
-                          <a href="01_table_oriented.html">What kind of data does Pandas handle?</a>
+                          <a href="01_table_oriented.html">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -274,7 +274,9 @@ Westminster</em> in respectively Paris, Antwerp and London.</p>
 <span class="gp">   ...: </span>                              <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 
-<span class="gp">In [3]: </span><span class="n">air_quality_no2</span> <span class="o">=</span> <span class="n">air_quality_no2</span><span class="p">[[</span><span class="s2">&quot;date.utc&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">]]</span> <span class="c1"># focus on a subset of columns</span>
+<span class="gp">In [3]: </span><span class="n">air_quality_no2</span> <span class="o">=</span> <span class="n">air_quality_no2</span><span class="p">[[</span><span class="s2">&quot;date.utc&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<span class="gp">   ...: </span>                                   <span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">]]</span>
+<span class="gp">   ...: </span>
 
 <span class="gp">In [4]: </span><span class="n">air_quality_no2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[4]: </span><span class="go"></span>
@@ -307,7 +309,9 @@ Westminster</em> in respectively Paris, Antwerp and London.</p>
 <span class="gp">   ...: </span>                               <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">   ...: </span>
 
-<span class="gp">In [6]: </span><span class="n">air_quality_pm25</span> <span class="o">=</span> <span class="n">air_quality_pm25</span><span class="p">[[</span><span class="s2">&quot;date.utc&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">]]</span> <span class="c1"># focus on a subset of columns</span>
+<span class="gp">In [6]: </span><span class="n">air_quality_pm25</span> <span class="o">=</span> <span class="n">air_quality_pm25</span><span class="p">[[</span><span class="s2">&quot;date.utc&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">,</span>
+<span class="gp">   ...: </span>                                     <span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">]]</span>
+<span class="gp">   ...: </span>
 
 <span class="gp">In [7]: </span><span class="n">air_quality_pm25</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[7]: </span><span class="go"></span>
@@ -340,7 +344,7 @@ Westminster</em> in respectively Paris, Antwerp and London.</p>
 <span class="go">4  2019-06-17 05:00:00+00:00  BETR801      pm25    7.5</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">concat</span></code> function performs concatenation operations of multiple
+<p>The <a class="reference internal" href="../../reference/api/pandas.concat.html#pandas.concat" title="pandas.concat"><code class="xref py py-func docutils literal notranslate"><span class="pre">concat()</span></code></a> function performs concatenation operations of multiple
 tables along one of the axis (row-wise or column-wise).</p>
     </li>
 </ul><p>By default concatenation is along axis 0, so the resulting table combines the rows
@@ -387,7 +391,9 @@ ensures that each of the original tables can be identified. This is not
 always the case. the <code class="docutils literal notranslate"><span class="pre">concat</span></code> function provides a convenient solution
 with the <code class="docutils literal notranslate"><span class="pre">keys</span></code> argument, adding an additional (hierarchical) row
 index. For example:</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">air_quality_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">air_quality_pm25</span><span class="p">,</span> <span class="n">air_quality_no2</span><span class="p">],</span> <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PM25&quot;</span><span class="p">,</span> <span class="s2">&quot;NO2&quot;</span><span class="p">])</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [15]: </span><span class="n">air_quality_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">air_quality_pm25</span><span class="p">,</span> <span class="n">air_quality_no2</span><span class="p">],</span>
+<span class="gp">   ....: </span>                         <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;PM25&quot;</span><span class="p">,</span> <span class="s2">&quot;NO2&quot;</span><span class="p">])</span>
+<span class="gp">   ....: </span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">air_quality_</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -411,13 +417,13 @@ moment, remember that the function <code class="docutils literal notranslate"><s
 convert any level of an index to a column, e.g.
 <code class="docutils literal notranslate"><span class="pre">air_quality.reset_index(level=0)</span></code></p>
 <div class="d-flex flex-row  gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Feel free to dive into the world of multi-indexing at <a class="reference internal" href="../../user_guide/advanced.html#advanced"><span class="std std-ref">MultiIndex / advanced indexing</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>Feel free to dive into the world of multi-indexing at the user guide section on <a class="reference internal" href="../../user_guide/advanced.html#advanced"><span class="std std-ref">advanced indexing</span></a>.</p>
 </div></div>
 <div class="d-flex flex-row gs-torefguide">
     <span class="badge badge-info">To user guide</span><p>More options on table concatenation (row and column
 wise) and how <code class="docutils literal notranslate"><span class="pre">concat</span></code> can be used to define the logic (union or
-intersection) of the indexes on the other axes is provided at
-<a class="reference internal" href="../../user_guide/merging.html#merging-concat"><span class="std std-ref">Concatenating objects</span></a>.</p>
+intersection) of the indexes on the other axes is provided at the section on
+<a class="reference internal" href="../../user_guide/merging.html#merging-concat"><span class="std std-ref">object concatenation</span></a>.</p>
 </div></div>
 <div class="section" id="join-tables-using-a-common-identifier">
 <h2>Join tables using a common identifier<a class="headerlink" href="#join-tables-using-a-common-identifier" title="Permalink to this headline">¶</a></h2>
@@ -465,17 +471,15 @@ table, each on the corresponding rows of the <code class="docutils literal notra
 
 <span class="gp">In [21]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[21]: </span><span class="go"></span>
-<span class="go">                    date.utc            location  ... coordinates.latitude  coordinates.longitude</span>
-<span class="go">0  2019-05-07 01:00:00+00:00  London Westminster  ...             51.49467               -0.13193</span>
-<span class="go">1  2019-05-07 01:00:00+00:00             FR04014  ...             48.83724                2.39390</span>
-<span class="go">2  2019-05-07 01:00:00+00:00             FR04014  ...             48.83722                2.39390</span>
-<span class="go">3  2019-05-07 01:00:00+00:00             BETR801  ...             51.20966                4.43182</span>
-<span class="go">4  2019-05-07 01:00:00+00:00             BETR801  ...             51.20966                4.43182</span>
-
-<span class="go">[5 rows x 6 columns]</span>
+<span class="go">                    date.utc            location parameter  value  coordinates.latitude  coordinates.longitude</span>
+<span class="go">0  2019-05-07 01:00:00+00:00  London Westminster       no2   23.0              51.49467               -0.13193</span>
+<span class="go">1  2019-05-07 01:00:00+00:00             FR04014       no2   25.0              48.83724                2.39390</span>
+<span class="go">2  2019-05-07 01:00:00+00:00             FR04014       no2   25.0              48.83722                2.39390</span>
+<span class="go">3  2019-05-07 01:00:00+00:00             BETR801      pm25   12.5              51.20966                4.43182</span>
+<span class="go">4  2019-05-07 01:00:00+00:00             BETR801       no2   50.5              51.20966                4.43182</span>
 </pre></div>
 </div>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">merge</span></code> function, for each of the rows in the
+<p>Using the <a class="reference internal" href="../../reference/api/pandas.merge.html#pandas.merge" title="pandas.merge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> function, for each of the rows in the
 <code class="docutils literal notranslate"><span class="pre">air_quality</span></code> table, the corresponding coordinates are added from the
 <code class="docutils literal notranslate"><span class="pre">air_quality_stations_coord</span></code> table. Both tables have the column
 <code class="docutils literal notranslate"><span class="pre">location</span></code> in common which is used as a key to combine the
@@ -510,12 +514,12 @@ supports multiple join options similar to database-style operations.</p>
 
 <span class="gp">In [25]: </span><span class="n">air_quality</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[25]: </span><span class="go"></span>
-<span class="go">                    date.utc  ...   name</span>
-<span class="go">0  2019-05-07 01:00:00+00:00  ...    NO2</span>
-<span class="go">1  2019-05-07 01:00:00+00:00  ...    NO2</span>
-<span class="go">2  2019-05-07 01:00:00+00:00  ...    NO2</span>
-<span class="go">3  2019-05-07 01:00:00+00:00  ...  PM2.5</span>
-<span class="go">4  2019-05-07 01:00:00+00:00  ...    NO2</span>
+<span class="go">                    date.utc            location parameter  ...    id                                        description   name</span>
+<span class="go">0  2019-05-07 01:00:00+00:00  London Westminster       no2  ...   no2                                   Nitrogen Dioxide    NO2</span>
+<span class="go">1  2019-05-07 01:00:00+00:00             FR04014       no2  ...   no2                                   Nitrogen Dioxide    NO2</span>
+<span class="go">2  2019-05-07 01:00:00+00:00             FR04014       no2  ...   no2                                   Nitrogen Dioxide    NO2</span>
+<span class="go">3  2019-05-07 01:00:00+00:00             BETR801      pm25  ...  pm25  Particulate matter less than 2.5 micrometers i...  PM2.5</span>
+<span class="go">4  2019-05-07 01:00:00+00:00             BETR801       no2  ...   no2                                   Nitrogen Dioxide    NO2</span>
 
 <span class="go">[5 rows x 9 columns]</span>
 </pre></div>
@@ -528,10 +532,10 @@ arguments are used here (instead of just <code class="docutils literal notransla
 between the two tables.</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Pandas supports also innPandas supports also inner, outer, and right joins.
-More information on join/merge of tables is provided in
-<a class="reference internal" href="../../user_guide/merging.html#merging-join"><span class="std std-ref">Database-style DataFrame or named Series joining/merging</span></a>. Or have a look to the
-<a class="reference internal" href="../comparison/comparison_with_sql.html#compare-with-sql-join"><span class="std std-ref">comparison with SQL</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>pandas supports also inner, outer, and right joins.
+More information on join/merge of tables is provided in the user guide section on
+<a class="reference internal" href="../../user_guide/merging.html#merging-join"><span class="std std-ref">database style merging of tables</span></a>. Or have a look at the
+<a class="reference internal" href="../comparison/comparison_with_sql.html#compare-with-sql-join"><span class="std std-ref">comparison with SQL</span></a> page.</p>
 </div><div class="shadow gs-callout gs-callout-remember">
     <h4>REMEMBER</h4><ul class="simple">
 <li><p>Multiple tables can be concatenated both column as row wise using
@@ -540,7 +544,7 @@ the <code class="docutils literal notranslate"><span class="pre">concat</span></
 function.</p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>The user guide provides more information on combining together data tables, see <a class="reference internal" href="../../user_guide/merging.html#merging"><span class="std std-ref">Merge, join, and concatenate</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>See the user guide for a full description of the various <a class="reference internal" href="../../user_guide/merging.html#merging"><span class="std std-ref">facilities to combine data tables</span></a>.</p>
 </div></div>
 </div>
 

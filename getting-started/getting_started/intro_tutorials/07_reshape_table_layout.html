@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>How to reshape the layout of tables? &#8212; pandas 1.0.0rc0+119.g79c6d694e documentation</title>
+    <title>How to reshape the layout of tables? &#8212; pandas 1.0.0rc0+132.ga4b2c8db9 documentation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../_static/sphinx-bootstrap.css" type="text/css" />
@@ -139,7 +139,7 @@
                   <ul>
                   
                       <li class="">
-                          <a href="01_table_oriented.html">What kind of data does Pandas handle?</a>
+                          <a href="01_table_oriented.html">What kind of data does pandas handle?</a>
                       </li>
                   
                       <li class="">
@@ -293,12 +293,12 @@ for survived.</p></li>
 
 <span class="gp">In [3]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[3]: </span><span class="go"></span>
-<span class="go">   PassengerId  Survived  Pclass  ...     Fare Cabin  Embarked</span>
-<span class="go">0            1         0       3  ...   7.2500   NaN         S</span>
-<span class="go">1            2         1       1  ...  71.2833   C85         C</span>
-<span class="go">2            3         1       3  ...   7.9250   NaN         S</span>
-<span class="go">3            4         1       1  ...  53.1000  C123         S</span>
-<span class="go">4            5         0       3  ...   8.0500   NaN         S</span>
+<span class="go">   PassengerId  Survived  Pclass                                               Name     Sex  ...  Parch            Ticket     Fare Cabin  Embarked</span>
+<span class="go">0            1         0       3                            Braund, Mr. Owen Harris    male  ...      0         A/5 21171   7.2500   NaN         S</span>
+<span class="go">1            2         1       1  Cumings, Mrs. John Bradley (Florence Briggs Th...  female  ...      0          PC 17599  71.2833   C85         C</span>
+<span class="go">2            3         1       3                             Heikkinen, Miss. Laina  female  ...      0  STON/O2. 3101282   7.9250   NaN         S</span>
+<span class="go">3            4         1       1       Futrelle, Mrs. Jacques Heath (Lily May Peel)  female  ...      0            113803  53.1000  C123         S</span>
+<span class="go">4            5         0       3                           Allen, Mr. William Henry    male  ...      0            373450   8.0500   NaN         S</span>
 
 <span class="go">[5 rows x 12 columns]</span>
 </pre></div>
@@ -366,14 +366,12 @@ format</a>.</p>
     <li><p>I want to sort the titanic data according to the age of the passengers.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[6]: </span><span class="go"></span>
-<span class="go">     PassengerId  Survived  Pclass                             Name  ...  Ticket     Fare  Cabin  Embarked</span>
-<span class="go">803          804         1       3  Thomas, Master. Assad Alexander  ...    2625   8.5167    NaN         C</span>
-<span class="go">755          756         1       2        Hamalainen, Master. Viljo  ...  250649  14.5000    NaN         S</span>
-<span class="go">644          645         1       3           Baclini, Miss. Eugenie  ...    2666  19.2583    NaN         C</span>
-<span class="go">469          470         1       3    Baclini, Miss. Helene Barbara  ...    2666  19.2583    NaN         C</span>
-<span class="go">78            79         1       2    Caldwell, Master. Alden Gates  ...  248738  29.0000    NaN         S</span>
-
-<span class="go">[5 rows x 12 columns]</span>
+<span class="go">     PassengerId  Survived  Pclass                             Name     Sex   Age  SibSp  Parch  Ticket     Fare Cabin Embarked</span>
+<span class="go">803          804         1       3  Thomas, Master. Assad Alexander    male  0.42      0      1    2625   8.5167   NaN        C</span>
+<span class="go">755          756         1       2        Hamalainen, Master. Viljo    male  0.67      1      1  250649  14.5000   NaN        S</span>
+<span class="go">644          645         1       3           Baclini, Miss. Eugenie  female  0.75      2      1    2666  19.2583   NaN        C</span>
+<span class="go">469          470         1       3    Baclini, Miss. Helene Barbara  female  0.75      2      1    2666  19.2583   NaN        C</span>
+<span class="go">78            79         1       2    Caldwell, Master. Alden Gates    male  0.83      0      2  248738  29.0000   NaN        S</span>
 </pre></div>
 </div>
     </li>
@@ -381,21 +379,19 @@ format</a>.</p>
     <li><p>I want to sort the titanic data according to the cabin class and age in descending order.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">titanic</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pclass&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[7]: </span><span class="go"></span>
-<span class="go">     PassengerId  Survived  Pclass                       Name  ...  Ticket    Fare  Cabin  Embarked</span>
-<span class="go">851          852         0       3        Svensson, Mr. Johan  ...  347060  7.7750    NaN         S</span>
-<span class="go">116          117         0       3       Connors, Mr. Patrick  ...  370369  7.7500    NaN         Q</span>
-<span class="go">280          281         0       3           Duane, Mr. Frank  ...  336439  7.7500    NaN         Q</span>
-<span class="go">483          484         1       3     Turkula, Mrs. (Hedwig)  ...    4134  9.5875    NaN         S</span>
-<span class="go">326          327         0       3  Nysveen, Mr. Johan Hansen  ...  345364  6.2375    NaN         S</span>
-
-<span class="go">[5 rows x 12 columns]</span>
+<span class="go">     PassengerId  Survived  Pclass                       Name     Sex   Age  SibSp  Parch  Ticket    Fare Cabin Embarked</span>
+<span class="go">851          852         0       3        Svensson, Mr. Johan    male  74.0      0      0  347060  7.7750   NaN        S</span>
+<span class="go">116          117         0       3       Connors, Mr. Patrick    male  70.5      0      0  370369  7.7500   NaN        Q</span>
+<span class="go">280          281         0       3           Duane, Mr. Frank    male  65.0      0      0  336439  7.7500   NaN        Q</span>
+<span class="go">483          484         1       3     Turkula, Mrs. (Hedwig)  female  63.0      0      0    4134  9.5875   NaN        S</span>
+<span class="go">326          327         0       3  Nysveen, Mr. Johan Hansen    male  61.0      0      0  345364  6.2375   NaN        S</span>
 </pre></div>
 </div>
-<p>With <code class="docutils literal notranslate"><span class="pre">sort_values</span></code>, the rows in the table are sorted according to the
+<p>With <a class="reference internal" href="../../reference/api/pandas.Series.sort_values.html#pandas.Series.sort_values" title="pandas.Series.sort_values"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Series.sort_values()</span></code></a>, the rows in the table are sorted according to the
 defined column(s). The index will follow the row order.</p>
     </li>
 </ul><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More details about sorting of tables is provided in <a class="reference internal" href="../basics.html#basics-sorting"><span class="std std-ref">Sorting</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>More details about sorting of tables is provided in the using guide section on <a class="reference internal" href="../basics.html#basics-sorting"><span class="std std-ref">sorting data</span></a>.</p>
 </div></div>
 <div class="section" id="long-to-wide-table-format">
 <h2>Long to wide table format<a class="headerlink" href="#long-to-wide-table-format" title="Permalink to this headline">¶</a></h2>
@@ -403,10 +399,12 @@ defined column(s). The index will follow the row order.</p>
 <span class="math notranslate nohighlight">\(NO_2\)</span> data and only use the first two measurements of each
 location (i.e. the head of each group). The subset of data will be
 called <code class="docutils literal notranslate"><span class="pre">no2_subset</span></code></p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">no2</span> <span class="o">=</span> <span class="n">air_quality</span><span class="p">[</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;parameter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;no2&quot;</span><span class="p">]</span> <span class="c1"># filter for no2 data only</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># filter for no2 data only</span>
+<span class="gp">In [8]: </span><span class="n">no2</span> <span class="o">=</span> <span class="n">air_quality</span><span class="p">[</span><span class="n">air_quality</span><span class="p">[</span><span class="s2">&quot;parameter&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;no2&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [9]: </span><span class="n">no2_subset</span> <span class="o">=</span> <span class="n">no2</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;location&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># use 2 measurements (head) for each location (groupby)</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="go"># use 2 measurements (head) for each location (groupby)</span>
+<span class="gp">In [9]: </span><span class="n">no2_subset</span> <span class="o">=</span> <span class="n">no2</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;location&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="gp">In [10]: </span><span class="n">no2_subset</span>
 <span class="gh">Out[10]: </span><span class="go"></span>
@@ -432,7 +430,7 @@ called <code class="docutils literal notranslate"><span class="pre">no2_subset</
 <span class="go">2019-04-09 03:00:00+00:00      NaN      NaN                67.0</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">pivot</span></code> function is purely reshaping of the data: a single value
+<p>The <a class="reference internal" href="../../reference/api/pandas.pivot_table.html#pandas.pivot_table" title="pandas.pivot_table"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code></a> function is purely reshaping of the data: a single value
 for each index/column combination is required.</p>
     </li>
 </ul><p>As pandas support plotting of multiple columns (see <a class="reference internal" href="04_plotting.html#min-tut-04-plotting"><span class="std std-ref">plotting tutorial</span></a>) out of the box, the conversion from
@@ -450,7 +448,7 @@ series at the same time:</p>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">no2</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;location&quot;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s2">&quot;value&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="gh">Out[13]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f63adf6ef10&gt;</span>
+<span class="gh">Out[13]: </span><span class="go">&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f03c43d7390&gt;</span>
 </pre></div>
 </div>
 <img alt="../../_images/7_reshape_columns.png" src="../../_images/7_reshape_columns.png" />
@@ -460,7 +458,7 @@ series at the same time:</p>
 index (row labels) is used.</p>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>For more information about <code class="docutils literal notranslate"><span class="pre">pivot</span></code>, see <span class="xref std std-ref">reshaping.reshaping</span>.</p>
+    <span class="badge badge-info">To user guide</span><p>For more information about <a class="reference internal" href="../../reference/api/pandas.DataFrame.pivot.html#pandas.DataFrame.pivot" title="pandas.DataFrame.pivot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot()</span></code></a>, see the user guide section on <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-reshaping"><span class="std std-ref">pivoting DataFrame objects</span></a>.</p>
 </div></div>
 <div class="section" id="pivot-table">
 <h2>Pivot table<a class="headerlink" href="#pivot-table" title="Permalink to this headline">¶</a></h2>
@@ -478,9 +476,9 @@ index (row labels) is used.</p>
 <span class="go">London Westminster  29.740050  13.443568</span>
 </pre></div>
 </div>
-<p>In the case of <code class="docutils literal notranslate"><span class="pre">pivot</span></code>, the data is only rearranged. When multiple
+<p>In the case of <a class="reference internal" href="../../reference/api/pandas.DataFrame.pivot.html#pandas.DataFrame.pivot" title="pandas.DataFrame.pivot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot()</span></code></a>, the data is only rearranged. When multiple
 values need to be aggregated (in this specific case, the values on
-different time steps) <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> can be used, providing an
+different time steps) <a class="reference internal" href="../../reference/api/pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table" title="pandas.DataFrame.pivot_table"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code></a> can be used, providing an
 aggregation function (e.g. mean) on how to combine these values.</p>
     </li>
 </ul><p>Pivot table is a well known concept in spreadsheet software. When
@@ -500,18 +498,18 @@ the <code class="docutils literal notranslate"><span class="pre">margin</span></
 </pre></div>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>For more information about <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code>, see <span class="xref std std-ref">reshaping.pivot</span>.</p>
+    <span class="badge badge-info">To user guide</span><p>For more information about <a class="reference internal" href="../../reference/api/pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table" title="pandas.DataFrame.pivot_table"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code></a>, see the user guide section on <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-pivot"><span class="std std-ref">pivot tables</span></a>.</p>
 </div><div class="alert alert-info">
 <p class="admonition-title">Note</p>
-<p>If case you are wondering, <code class="docutils literal notranslate"><span class="pre">pivot_table</span></code> is indeed directly linked
-to <code class="docutils literal notranslate"><span class="pre">groupby</span></code>. The same result can be derived by grouping on both
+<p>If case you are wondering, <a class="reference internal" href="../../reference/api/pandas.DataFrame.pivot_table.html#pandas.DataFrame.pivot_table" title="pandas.DataFrame.pivot_table"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pivot_table()</span></code></a> is indeed directly linked
+to <a class="reference internal" href="../../reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="pandas.DataFrame.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a>. The same result can be derived by grouping on both
 <code class="docutils literal notranslate"><span class="pre">parameter</span></code> and <code class="docutils literal notranslate"><span class="pre">location</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">air_quality</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;location&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Have a look at <code class="docutils literal notranslate"><span class="pre">groupby</span></code> in combination with <code class="docutils literal notranslate"><span class="pre">unstack</span></code> at <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-combine-with-groupby"><span class="std std-ref">Combining with stats and GroupBy</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>Have a look at <a class="reference internal" href="../../reference/api/pandas.DataFrame.groupby.html#pandas.DataFrame.groupby" title="pandas.DataFrame.groupby"><code class="xref py py-meth docutils literal notranslate"><span class="pre">groupby()</span></code></a> in combination with <a class="reference internal" href="../../reference/api/pandas.DataFrame.unstack.html#pandas.DataFrame.unstack" title="pandas.DataFrame.unstack"><code class="xref py py-meth docutils literal notranslate"><span class="pre">unstack()</span></code></a> at the user guide section on <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-combine-with-groupby"><span class="std std-ref">combining stats and groupby</span></a>.</p>
 </div></div>
 <div class="section" id="wide-to-long-format">
 <h2>Wide to long format<a class="headerlink" href="#wide-to-long-format" title="Permalink to this headline">¶</a></h2>
@@ -544,17 +542,19 @@ section:</p>
 <span class="go">4 2019-04-09 05:00:00+00:00  BETR801   46.5</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">melt</span></code> method on a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> converts the data table from wide
+<p>The <a class="reference internal" href="../../reference/api/pandas.melt.html#pandas.melt" title="pandas.melt"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.melt()</span></code></a> method on a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> converts the data table from wide
 format to long format. The column headers become the variable names in a
 newly created column.</p>
     </li>
-</ul><p>The solution is the short version on how to apply <code class="docutils literal notranslate"><span class="pre">melt</span></code>. The method
+</ul><p>The solution is the short version on how to apply <a class="reference internal" href="../../reference/api/pandas.melt.html#pandas.melt" title="pandas.melt"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.melt()</span></code></a>. The method
 will <em>melt</em> all columns NOT mentioned in <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> together into two
 columns: A columns with the column header names and a column with the
 values itself. The latter column gets by default the name <code class="docutils literal notranslate"><span class="pre">value</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">melt</span></code> method can be defined in more detail:</p>
+<p>The <a class="reference internal" href="../../reference/api/pandas.melt.html#pandas.melt" title="pandas.melt"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.melt()</span></code></a> method can be defined in more detail:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">no_2</span> <span class="o">=</span> <span class="n">no2_pivoted</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">id_vars</span><span class="o">=</span><span class="s2">&quot;date.utc&quot;</span><span class="p">,</span>
-<span class="gp">   ....: </span>                        <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;BETR801&quot;</span><span class="p">,</span> <span class="s2">&quot;FR04014&quot;</span><span class="p">,</span> <span class="s2">&quot;London Westminster&quot;</span><span class="p">],</span>
+<span class="gp">   ....: </span>                        <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;BETR801&quot;</span><span class="p">,</span>
+<span class="gp">   ....: </span>                                    <span class="s2">&quot;FR04014&quot;</span><span class="p">,</span>
+<span class="gp">   ....: </span>                                    <span class="s2">&quot;London Westminster&quot;</span><span class="p">],</span>
 <span class="gp">   ....: </span>                        <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;NO_2&quot;</span><span class="p">,</span>
 <span class="gp">   ....: </span>                        <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;id_location&quot;</span><span class="p">)</span>
 <span class="gp">   ....: </span>
@@ -582,7 +582,7 @@ default <code class="docutils literal notranslate"><span class="pre">variable</s
 user-defined names for the two generated columns. The columns to melt
 are defined by <code class="docutils literal notranslate"><span class="pre">id_vars</span></code> and <code class="docutils literal notranslate"><span class="pre">value_vars</span></code>.</p>
 <div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>Conversion from wide to long format with <code class="docutils literal notranslate"><span class="pre">melt</span></code> is explained in <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-melt"><span class="std std-ref">Reshaping by Melt</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>Conversion from wide to long format with <a class="reference internal" href="../../reference/api/pandas.melt.html#pandas.melt" title="pandas.melt"><code class="xref py py-func docutils literal notranslate"><span class="pre">pandas.melt()</span></code></a> is explained in the user guide section on <a class="reference internal" href="../../user_guide/reshaping.html#reshaping-melt"><span class="std std-ref">reshaping by melt</span></a>.</p>
 </div><div class="shadow gs-callout gs-callout-remember">
     <h4>REMEMBER</h4><ul class="simple">
 <li><p>Sorting by one or more columns is supported by <code class="docutils literal notranslate"><span class="pre">sort_values</span></code></p></li>
@@ -592,7 +592,7 @@ are defined by <code class="docutils literal notranslate"><span class="pre">id_v
 long format)</p></li>
 </ul>
 </div><div class="d-flex flex-row gs-torefguide">
-    <span class="badge badge-info">To user guide</span><p>More information on reshaping and pivoting is provided in <a class="reference internal" href="../../user_guide/reshaping.html#reshaping"><span class="std std-ref">Reshaping and pivot tables</span></a>.</p>
+    <span class="badge badge-info">To user guide</span><p>A full overview is available in the user guide on the pages about <a class="reference internal" href="../../user_guide/reshaping.html#reshaping"><span class="std std-ref">reshaping and pivoting</span></a>.</p>
 </div></div>
 </div>
 
